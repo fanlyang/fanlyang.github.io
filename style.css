@@ -292,87 +292,109 @@ h2 {
 }
 
 /* =========================
-   Research (Vertical Layout with Read More)
+   Research Flip Cards Layout
 ========================= */
 #research {
-  padding: 80px 10% 40px;
+  padding: 80px 10% 60px;
+  text-align: center;
 }
 
 #research h2 {
-  text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
   color: #00bcd4;
+  margin-bottom: 50px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-/* 每个研究条目：左图右文 */
-.research-item {
+/* 一行四个卡片 */
+.research-grid {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 25px;
-  background: rgba(255,255,255,0.05);
+}
+
+.research-card {
+  flex: 1 1 calc(25% - 25px);
+  max-width: calc(25% - 25px);
+  perspective: 1000px;
+  height: 320px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.research-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 正反面样式 */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #fff;
 }
 
-.research-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-}
-
-/* 左侧图片 */
-.research-img {
-  width: 230px;
-  height: 160px;
+.card-front img {
+  width: 100%;
+  height: 130px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-/* 右侧文字 */
-.research-content {
-  flex: 1;
+.card-front h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
-.research-content h3 {
-  color: #ffffff;
-  font-size: 1.3rem;
+.card-front p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: space-between;
+}
+
+.card-back h3 {
+  color: #00bcd4;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-.research-content ul {
-  margin-left: 20px;
-  color: #dddddd;
-  line-height: 1.6;
-  list-style-type: disc;
+.card-back p {
+  font-size: 0.9rem;
+  color: #ddd;
+  line-height: 1.4;
 }
 
-/* 展开隐藏内容 */
-.extra-content {
-  display: none;
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.extra-content.active {
-  display: block;
-  animation: fadeIn 0.4s ease;
-}
-
-/* Read More 按钮 */
 .read-more-btn {
+  align-self: flex-start;
   background: none;
   border: 1px solid #00bcd4;
   color: #00bcd4;
-  padding: 6px 16px;
   border-radius: 6px;
+  padding: 6px 14px;
   cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 10px;
+  transition: 0.3s;
+  font-size: 0.9rem;
 }
 
 .read-more-btn:hover {
@@ -380,21 +402,18 @@ h2 {
   color: #fff;
 }
 
-/* 动画 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 响应式 */
+@media (max-width: 1200px) {
+  .research-card {
+    flex: 1 1 calc(50% - 25px);
+    max-width: calc(50% - 25px);
+  }
 }
 
-/* 响应式布局 */
-@media (max-width: 800px) {
-  .research-item {
-    flex-direction: column;
-    text-align: center;
-  }
-  .research-img {
-    width: 100%;
-    height: auto;
+@media (max-width: 700px) {
+  .research-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
