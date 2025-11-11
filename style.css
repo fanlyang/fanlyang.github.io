@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* 导航栏 */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  z-index: 1000;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* Home */
+.hero {
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-text {
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.hero-text h1 {
+  font-size: 3em;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00bcd4;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #008c9e;
+}
+
+/* 通用内容 */
+.content {
+  padding: 100px 80px;
+  background: #f8f8f8;
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 5px;
+}
+
+.research-item, h3 {
+  margin-top: 25px;
+}
+
+.profile {
+  width: 160px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
