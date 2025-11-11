@@ -135,59 +135,85 @@ h2 {
 .prof-item {
   display: flex;
   gap: 30px;
-  margin-bottom: 50px;
-  align-items: flex-start;
+  margin-bottom: 40px;
   flex-wrap: wrap;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
 }
 
 .prof-left {
+  flex: 1;
+  min-width: 250px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.prof-left em {
+  font-weight: normal;
+  color: #ccc;
+}
+
+.prof-right {
   flex: 2;
   min-width: 300px;
 }
 
-.prof-right {
-  flex: 1;
-  min-width: 150px;
-  display: flex;
-  justify-content: center;
+.prof-right ul {
+  padding-left: 20px;
 }
 
-.prof-right img {
-  width: 150px;   /* 缩小到150px */
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid #00bcd4;
+.prof-right li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #ddd;
 }
 
-/* About Me 左右分栏 */
+section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+/* CV Button */
+.btn {
+  display: inline-block;
+  background: #00bcd4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0097a7;
+}
+
 .about-container {
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap; /* 手机端自动换行 */
-  margin-bottom: 50px;
+  gap: 30px;           /* 间距略缩小 */
+  flex-wrap: wrap;
+  margin-top: 60px;     /* 上方过多空白可减少 */
+  margin-bottom: 40px;
   align-items: flex-start;
 }
 
 .about-left {
   flex: 1;
-  min-width: 150px;
+  min-width: 180px;      /* 适应缩小图片 */
   display: flex;
   justify-content: center;
 }
 
 .about-left img {
-  width: 150px;
-  height: 150px;
+  width: 200px;          /* 稍大一点，更平衡 */
+  height: 200px;
   object-fit: cover;
-  border-radius: 12px; /* 圆角 */
+  border-radius: 12px;
   border: 2px solid #00bcd4;
-}
-
-.photo-contact {
-  text-align: center;
 }
 
 .photo-contact p {
@@ -198,11 +224,26 @@ h2 {
 
 .photo-contact p strong {
   color: #fff;
+  font-size: 16px;
 }
 
 .about-right {
   flex: 2;
   min-width: 300px;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+h3 {
+  font-size: 22px;
+  color: #fff;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .education-item {
