@@ -292,114 +292,111 @@ h2 {
 }
 
 /* =========================
-   Research: horizontal cards + details
+   Research (Vertical Layout with Read More)
 ========================= */
 #research {
-  padding-top: 40px; /* main/section 已经有上内边距；这里微调 */
+  padding: 80px 10% 40px;
 }
 
-/* 横向一排，窄屏可横向滚动 */
-.research-row {
-  display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  padding: 10px 6px 20px 6px;
-  margin-bottom: 12px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* 卡片（扁长矩形） */
-.research-card {
-  flex: 0 0 28%;            /* 视窗较大时三张或四张并排，按需调整 */
-  min-width: 260px;         /* 确保在窄屏可横向滚动 */
-  height: 160px;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: transform 300ms ease, box-shadow 300ms ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: #fff;
-}
-
-/* 卡片被选中/悬停样式 */
-.research-card:hover,
-.research-card.active {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-}
-
-/* 卡片下方的短简介 */
-.card-summary {
-  font-size: 0.95em;
-  color: rgba(255,255,255,0.95);
-  padding: 10px 12px;
-  background: rgba(0,0,0,0.35);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
-/* 卡片内部标题覆盖层（淡黑渐变） */
-.card-content {
-  padding: 14px 16px 8px 16px;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
-}
-
-/* 概要下的提示文本 */
-.hint {
+#research h2 {
   text-align: center;
-  color: #bfc9cb;
-  margin-bottom: 12px;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #00bcd4;
 }
 
-/* 详细介绍区：折叠/展开动画（用max-height过渡） */
-.research-details {
-  width: 100%;
-  margin-top: 12px;
-  display: block;
+/* 每个研究条目：左图右文 */
+.research-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* 每个 detail-panel 初始折叠 */
-.detail-panel {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 400ms ease, opacity 300ms ease;
-  opacity: 0;
-  background: rgba(255,255,255,0.03);
-  padding: 0 18px;
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+/* 左侧图片 */
+.research-img {
+  width: 230px;
+  height: 160px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 12px;
 }
 
-/* 打开时样式（由 JS 添加 .open） */
-.detail-panel.open {
-  padding: 18px;
-  max-height: 800px; /* 足够展开内容 */
-  opacity: 1;
+/* 右侧文字 */
+.research-content {
+  flex: 1;
 }
 
-/* detail 内部排版 */
-.detail-panel h3 {
-  margin-top: 0;
+.research-content h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.research-content ul {
+  margin-left: 20px;
+  color: #dddddd;
+  line-height: 1.6;
+  list-style-type: disc;
+}
+
+/* 展开隐藏内容 */
+.extra-content {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.extra-content.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Read More 按钮 */
+.read-more-btn {
+  background: none;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.read-more-btn:hover {
+  background-color: #00bcd4;
   color: #fff;
 }
 
-.detail-panel p,
-.detail-panel ul {
-  color: #dcdcdc;
-  margin-bottom: 8px;
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* 小屏微调：卡片更窄，行内可见1~2张 */
-@media (max-width: 900px) {
-  .research-card { flex: 0 0 70%; min-width: 320px; height: 170px; }
+/* 响应式布局 */
+@media (max-width: 800px) {
+  .research-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .research-img {
+    width: 100%;
+    height: auto;
+  }
 }
-
 
 /* =========================
    Footer
