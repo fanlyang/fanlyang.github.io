@@ -15,6 +15,11 @@ html, body {
   color: #fff;
 }
 
+body {
+  padding-top: 90px; /* 70px导航 + 20px间距 */
+}
+
+
 /* =========================
    Navigation
 ========================= */
@@ -297,8 +302,8 @@ h2 {
 .research-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;               /* 减小间隔 */
-  justify-content: flex-start; /* 左对齐，间隔自然 */
+  gap: 20px;
+  justify-content: space-between; /* 四个卡片左右均衡 */
   margin-top: 50px;
 }
 
@@ -306,13 +311,13 @@ h2 {
   background: rgba(255,255,255,0.05);
   border-radius: 12px;
   padding: 20px;
-  width: calc(25% - 15px); /* 4 个卡片并排，减去 gap */
+  width: calc(25% - 15px); /* 四个卡片并排 */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 左对齐文字 */
-  text-align: left;        /* 左对齐文字 */
+  align-items: flex-start;
+  text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
-  user-select: text;       /* 允许复制文字 */
+  user-select: text; /* 允许复制文字 */
 }
 
 .research-card img {
@@ -332,6 +337,7 @@ h2 {
 .research-card p {
   font-size: 1em;
   color: #ccc;
+  line-height: 1.5;
 }
 
 /* Hover 放大效果 */
