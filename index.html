@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <header class="header">
     <nav class="nav">
@@ -39,7 +40,24 @@
     &copy; 2025 Fan Yang | Designed for Ph.D. Application Portfolio
   </footer>
 
+  <!-- Particles.js -->
   <script src="assets/js/particles.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {"value":80},
+        "color":{"value":"#00bcd4"},
+        "shape":{"type":"circle"},
+        "opacity":{"value":0.5},
+        "size":{"value":3},
+        "line_linked":{"enable":true,"distance":150,"color":"#00bcd4","opacity":0.4,"width":1},
+        "move":{"enable":true,"speed":2,"direction":"none","out_mode":"bounce"}
+      },
+      "interactivity":{
+        "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"}}
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
