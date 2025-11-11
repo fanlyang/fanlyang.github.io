@@ -155,9 +155,13 @@ h2 {
 
 /* Footer */
 footer {
+  position: relative; /* 改为相对，不覆盖内容 */
+  bottom: 0;
+  width: 100%;
   text-align: center;
   padding: 20px;
   background: #080919;
   color: #888;
   font-size: 14px;
 }
+
