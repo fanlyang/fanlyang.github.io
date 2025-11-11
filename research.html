@@ -24,6 +24,7 @@
     <section id="research">
       <h2>Research Experience</h2>
 
+      <!-- Item 1 -->
       <div class="research-item">
         <img src="assets/images/md_solver.png" alt="Molecular Dynamics" class="research-img">
         <div class="research-content">
@@ -33,9 +34,19 @@
             <li>Implemented MPI domain decomposition and cell-list optimization for efficient parallelism.</li>
             <li>Achieved excellent scalability on HPC clusters by minimizing communication overhead.</li>
           </ul>
+          <button class="read-more-btn">Read More</button>
+          <div class="extra-content">
+            <p>
+              This project explores advanced parallel communication schemes in classical molecular dynamics simulations. 
+              The solver employs a spatial decomposition model using ghost-cell updates and asynchronous non-blocking MPI operations 
+              to minimize communication time. Benchmark tests demonstrate near-linear scaling up to 512 cores, 
+              validating both computational efficiency and domain decomposition strategy.
+            </p>
+          </div>
         </div>
       </div>
 
+      <!-- Item 2 -->
       <div class="research-item">
         <img src="assets/images/quantum_linear.png" alt="Quantum Computing" class="research-img">
         <div class="research-content">
@@ -45,9 +56,18 @@
             <li>Used XACC framework to orchestrate hybrid quantum-classical workflows.</li>
             <li>Benchmarked performance across simulators and quantum hardware backends.</li>
           </ul>
+          <button class="read-more-btn">Read More</button>
+          <div class="extra-content">
+            <p>
+              The project focuses on hybrid quantum-classical workflows integrating variational quantum solvers 
+              with classical optimization loops. Emphasis was placed on circuit depth reduction, parameter initialization, 
+              and hardware noise mitigation. Results provide insights into the practical feasibility of near-term quantum linear solvers.
+            </p>
+          </div>
         </div>
       </div>
 
+      <!-- Item 3 -->
       <div class="research-item">
         <img src="assets/images/fem_solver.png" alt="FEM Solver" class="research-img">
         <div class="research-content">
@@ -57,9 +77,18 @@
             <li>Implemented Newton–Raphson and arc-length methods for nonlinear structural analysis.</li>
             <li>Enabled visualization and post-processing for convergence and deformation study.</li>
           </ul>
+          <button class="read-more-btn">Read More</button>
+          <div class="extra-content">
+            <p>
+              The FEM solver adopts a fully object-oriented architecture featuring abstract base classes 
+              for elements, materials, and solvers. Nonlinear solution strategies were tested on buckling and 
+              post-buckling problems, achieving robust convergence and extensibility for future development.
+            </p>
+          </div>
         </div>
       </div>
 
+      <!-- Item 4 -->
       <div class="research-item">
         <img src="assets/images/ai_placeholder.png" alt="AI Surrogate Model" class="research-img">
         <div class="research-content">
@@ -68,6 +97,14 @@
             <li>Developing surrogate modeling for Uncertainty Quantification (UQ) in simulations.</li>
             <li>Combining classical numerical solvers with machine learning acceleration.</li>
           </ul>
+          <button class="read-more-btn">Read More</button>
+          <div class="extra-content">
+            <p>
+              Ongoing research focuses on data-driven surrogate models leveraging Gaussian Processes 
+              and Neural Operators to approximate complex PDE solutions. 
+              The aim is to accelerate uncertainty propagation in multiscale simulations.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -77,5 +114,16 @@
   <footer>
     <p>© 2025 Fan Yang | Designed for Ph.D. Application Portfolio</p>
   </footer>
+
+  <script>
+    // 展开/收起交互逻辑
+    document.querySelectorAll(".read-more-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle("active");
+        btn.textContent = content.classList.contains("active") ? "Show Less" : "Read More";
+      });
+    });
+  </script>
 </body>
 </html>
