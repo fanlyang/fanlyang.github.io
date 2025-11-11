@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | Fan Yang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fan Yang</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="professional.html">Professional</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="assets/pdf/cv.pdf" target="_blank">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <section id="research">
+    <h2>Research Experience</h2>
+
+    <div class="research-item">
+      <h3>MPI-based Parallelization and Optimization of a Classical Molecular Dynamics Solver</h3>
+      <ul>
+        <li>Hand-coded an MD solver from scratch in C++ (including the Velocity-Verlet integrator). Designed and implemented a robust Domain Decomposition strategy using MPI for efficient load balancing.</li>
+        <li>Optimized short-range force calculations by leveraging the Cell List method and a 26Neighbor Cell Communication Scheme, significantly minimizing MPI overhead and demonstrating high parallel scalability on HPC clusters.</li>
+      </ul>
+      <img src="assets/images/md_solver.png" alt="Molecular Dynamics">
+    </div>
+
+    <div class="research-item">
+      <h3>Quantum-Classical Hybrid Computing for Linear Systems</h3>
+      <ul>
+        <li>Conducted a comparative study of hybrid quantum-classical approaches to solving the linear system Ax=b by implementing both the HHL and VQLS algorithms.</li>
+        <li>Utilized the XACC Framework to orchestrate hybrid workflows, integrating multiple quantum backends.</li>
+        <li>Performed detailed performance benchmarking, focusing on low-level compilation, IR transformations, and optimization beyond high-level Python SDKs.</li>
+      </ul>
+      <img src="assets/images/quantum_linear.png" alt="Quantum Computing">
+    </div>
+
+    <div class="research-item">
+      <h3>Object-Oriented Development of an Advanced Nonlinear FEM Solver in Java</h3>
+      <ul>
+        <li>Engineered an object-oriented FEM solver from scratch in Java, establishing a modular architecture for linear 1D structural elements with post-processing visualization.</li>
+        <li>Architecture emphasizes abstraction and polymorphism for flexible integration of new elements, material models, and boundary conditions.</li>
+        <li>Implemented advanced nonlinear solvers, including Newton–Raphson iteration and generalized arc-length method, achieving robust convergence in complex post-buckling phenomena.</li>
+      </ul>
+      <img src="assets/images/fem_solver.png" alt="FEM Solver">
+    </div>
+
+    <div class="research-item">
+      <h3>AI for Scientific Computation (Coming Soon)</h3>
+      <p>Developing surrogate modeling techniques for Uncertainty Quantification (UQ) to accelerate simulation pipelines using AI.</p>
+      <img src="assets/images/ai_placeholder.png" alt="AI Surrogate Model">
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Fan Yang | Designed for Ph.D. Application Portfolio</p>
+  </footer>
+
+  <!-- Particles.js -->
+  <script src="assets/js/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {"value":80},
+        "color":{"value":"#00bcd4"},
+        "shape":{"type":"circle"},
+        "opacity":{"value":0.5},
+        "size":{"value":3},
+        "line_linked":{"enable":true,"distance":150,"color":"#00bcd4","opacity":0.4,"width":1},
+        "move":{"enable":true,"speed":2,"direction":"none","out_mode":"bounce"}
+      },
+      "interactivity":{
+        "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"}}
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
