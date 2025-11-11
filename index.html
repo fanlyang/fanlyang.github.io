@@ -3,89 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fan Yang | Research Homepage</title>
+  <title>Fan Yang | SPEEDUP</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- 导航栏 -->
-  <nav>
-    <div class="logo">Fan Yang</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#professional">Professional</a></li>
-      <li><a href="#about">About Me</a></li>
-    </ul>
-  </nav>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Fan Yang</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="professional.html">Professional</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="assets/pdf/cv.pdf" target="_blank">CV</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Home 页面 -->
-  <section id="home" class="hero">
-    <video autoplay muted loop id="bg-video">
-      <source src="assets/images/bg.mp4" type="video/mp4">
-    </video>
-    <div class="hero-text">
-      <h1>Fan Yang</h1>
-      <p>Quantum Computing · HPC · Molecular Simulation</p>
-      <p>Currently exploring hybrid quantum-classical algorithms to solve large-scale linear systems efficiently. My Master's training in Computational Engineering equipped me with strong programming, numerical analysis, and parallel computing skills. I aim to contribute to quantum algorithm optimization and scalable HPC simulations in my Ph.D. research.</p>
-      <div class="home-images">
-        <img src="assets/images/research1.png" alt="MD Simulation">
-        <img src="assets/images/research2.png" alt="Quantum Simulation">
-        <img src="assets/images/research3.png" alt="FEM Solver">
-      </div>
-      <a href="assets/pdf/cv.pdf" class="btn">Download CV (PDF)</a>
+  <!-- Home Section -->
+  <section id="home">
+    <div id="particles-js"></div>
+    <div class="home-content">
+      <h1>SPEEDUP — Unified Acceleration across Numerical, Quantum, and AI Paradigms</h1>
+      <p>
+        Exploring acceleration from three complementary perspectives: 
+        <strong>Numerical modeling (HPC)</strong>, 
+        <strong>Quantum computing</strong>, and 
+        <strong>AI-driven surrogate modeling</strong>.<br>
+        My research connects these paradigms to bridge physical modeling, computational science, and data intelligence.
+      </p>
+      <a href="research.html" class="btn">Explore My Research</a>
     </div>
-  </section>
-
-  <!-- Research Experience -->
-  <section id="research" class="content">
-    <h2>Research Experience</h2>
-    <div class="research-item">
-      <h3>MPI-based Parallelization of Molecular Dynamics Solver</h3>
-      <p>Hand-coded a classical MD solver in C++ using Velocity-Verlet, designed a robust domain decomposition strategy, and optimized short-range force calculation with Cell Lists and 26-Neighbor communication.</p>
-      <img src="assets/images/md_solver.png" alt="MD Solver Diagram">
-    </div>
-
-    <div class="research-item">
-      <h3>Quantum-Classical Hybrid Computing for Linear Systems</h3>
-      <p>Implemented HHL and VQLS algorithms using the XACC framework to integrate multiple quantum backends; benchmarked performance vs classical solvers at the compiler level.</p>
-      <img src="assets/images/quantum_linear.png" alt="Quantum Linear Solver">
-    </div>
-
-    <div class="research-item">
-      <h3>Object-Oriented Nonlinear FEM Solver in Java</h3>
-      <p>Developed an extensible FEM solver capable of nonlinear analysis with Newton–Raphson and arc-length methods, emphasizing modular architecture and polymorphism.</p>
-      <img src="assets/images/fem_solver.png" alt="FEM Solver Visualization">
-    </div>
-  </section>
-
-  <!-- Professional Experience -->
-  <section id="professional" class="content">
-    <h2>Professional Experience</h2>
-    <h3>Xiamen Cardiovascular Hospital, Xiamen University</h3>
-    <p>Led algorithm design for medical device management systems, integrating UDI-based data from six hospital systems, improving interoperability and data integrity.</p>
-
-    <h3>Xiamen International Bank</h3>
-    <p>Completed quantitative risk analysis training and developed analytical workflows for structured decision processes.</p>
-  </section>
-
-  <!-- About Me -->
-  <section id="about" class="content">
-    <h2>About Me</h2>
-    <p>I'm Fan Yang, an aspiring Ph.D. student passionate about quantum computing, high-performance simulations, and numerical modeling of complex systems.</p>
-
-    <div class="photo-gallery">
-      <img src="assets/images/profile1.jpeg" alt="Fan Yang - 2017">
-      <img src="assets/images/profile2.jpeg" alt="Fan Yang - 2019">
-      <img src="assets/images/profile3.jpeg" alt="Fan Yang - 2022">
-    </div>
-
-    <p>Email: <a href="mailto:fan.yang@edu.rub.de">fan.yang@edu.rub.de</a></p>
-    <a href="assets/pdf/cv.pdf" class="btn">Download CV (PDF)</a>
   </section>
 
   <footer>
-    <p>© 2025 Fan Yang | Designed by Fan Yang</p>
+    <p>© 2025 Fan Yang | Designed for Ph.D. Application Portfolio</p>
   </footer>
+
+  <script src="assets/js/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
