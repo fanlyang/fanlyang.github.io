@@ -168,8 +168,8 @@ h2 {
 }
 
 .about-left img {
-  width: 250px;        /* 固定大小 */
-  height: 250px;
+  width: 150px;        /* 固定大小 */
+  height: 150px;
   object-fit: cover;
   border-radius: 12px; /* 圆角 */
   border: 2px solid #00bcd4; /* 边框 */
