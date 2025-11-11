@@ -52,13 +52,18 @@ nav .nav-links a:hover {
 /* Buttons */
 .btn {
   display: inline-block;
-  margin-top: 20px;
   padding: 10px 25px;
   background-color: #00bcd4;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0097a7;
 }
 
 /* Home Section */
@@ -124,31 +129,29 @@ h2 {
   gap: 30px;
   margin-bottom: 50px;
   align-items: flex-start;
-  flex-wrap: wrap; /* 手机端自适应 */
+  flex-wrap: wrap;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .prof-left {
-  flex: 1;
+  flex: 2;
   min-width: 300px;
 }
 
 .prof-right {
   flex: 1;
-  min-width: 200px;
+  min-width: 150px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
 }
 
 .prof-right img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 12px;
+  width: 150px;   /* 缩小到150px */
+  height: 150px;
   object-fit: cover;
-  border: 1px solid #444;
+  border-radius: 12px;
+  border: 2px solid #00bcd4;
 }
 
 /* About Me 左右分栏 */
@@ -162,17 +165,17 @@ h2 {
 
 .about-left {
   flex: 1;
-  min-width: 250px;
+  min-width: 150px;
   display: flex;
   justify-content: center;
 }
 
 .about-left img {
-  width: 150px;        /* 固定大小 */
+  width: 150px;       /* 缩小图片 */
   height: 150px;
   object-fit: cover;
   border-radius: 12px; /* 圆角 */
-  border: 2px solid #00bcd4; /* 边框 */
+  border: 2px solid #00bcd4;
 }
 
 .about-right {
@@ -188,31 +191,12 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* CV Button */
-.btn {
-  display: inline-block;
-  background: #00bcd4;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #0097a7;
-}
-
-/* Footer */
 footer {
-  position: relative;
-  bottom: 0;
   width: 100%;
   text-align: center;
   padding: 20px;
   background: #080919;
   color: #888;
   font-size: 14px;
+  margin-top: 40px; /* 和内容保持间距 */
 }
-
