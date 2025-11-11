@@ -141,16 +141,17 @@ h2 {
 ========================= */
 .main-content {
   display: flex;
-  gap: 50px;
+  gap: 30px; /* 左右间距缩小，原来50px太大 */
   flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .left-column {
-  flex: 1;
+  flex: 0 0 250px; /* 固定宽度 */
   text-align: center;
-  min-width: 250px;
 }
-
 .profile-picture {
   width: 150px;
   height: 150px;
@@ -193,9 +194,11 @@ h2 {
 
 /* Right Column Content */
 .right-column {
-  flex: 3;
+  flex: 1; /* 剩余空间给右边 */
   min-width: 300px;
+  max-width: 700px; /* 限制文字行宽，避免太长 */
 }
+
 
 .about-heading {
   font-size: 2.2em;
@@ -207,6 +210,12 @@ h2 {
   margin-bottom: 40px;
   font-size: 1.05em;
   color: #ddd;
+  line-height: 1.6;
+}
+/* 控制段落宽度，提升可读性 */
+.right-column p {
+  max-width: 650px; /* 每行最多650px */
+  word-wrap: break-word;
 }
 
 .about-text a {
