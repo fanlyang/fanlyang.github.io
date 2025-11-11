@@ -23,91 +23,62 @@
   <main>
     <section id="research">
       <h2>Research Experience</h2>
+      <div class="research-grid">
 
-      <!-- Item 1 -->
-      <div class="research-item">
-        <img src="assets/images/md_solver.png" alt="Molecular Dynamics" class="research-img">
-        <div class="research-content">
-          <h3>MPI-based Parallelization and Optimization of a Classical Molecular Dynamics Solver</h3>
-          <ul>
-            <li>Developed a molecular dynamics solver in C++ with Velocity-Verlet integration.</li>
-            <li>Implemented MPI domain decomposition and cell-list optimization for efficient parallelism.</li>
-            <li>Achieved excellent scalability on HPC clusters by minimizing communication overhead.</li>
-          </ul>
-          <button class="read-more-btn">Read More</button>
+        <!-- 1 -->
+        <div class="research-card">
+          <img src="assets/images/md_solver.png" alt="MD Solver">
+          <h3>Molecular Dynamics Parallelization</h3>
+        <button class="read-more-btn">Read More</button>
           <div class="extra-content">
             <p>
-              This project explores advanced parallel communication schemes in classical molecular dynamics simulations. 
-              The solver employs a spatial decomposition model using ghost-cell updates and asynchronous non-blocking MPI operations 
-              to minimize communication time. Benchmark tests demonstrate near-linear scaling up to 512 cores, 
-              validating both computational efficiency and domain decomposition strategy.
+              Developed MPI-based domain decomposition for molecular dynamics with cell-list acceleration and efficient force communication.
+              Implemented a scalable C++ MD solver using ghost-cell updates and non-blocking MPI communication.
+              Achieved near-linear scaling up to 512 cores on HPC systems.
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Item 2 -->
-      <div class="research-item">
-        <img src="assets/images/quantum_linear.png" alt="Quantum Computing" class="research-img">
-        <div class="research-content">
-          <h3>Quantum–Classical Hybrid Computing for Linear Systems</h3>
-          <ul>
-            <li>Implemented both HHL and VQLS algorithms to solve linear systems on hybrid platforms.</li>
-            <li>Used XACC framework to orchestrate hybrid quantum-classical workflows.</li>
-            <li>Benchmarked performance across simulators and quantum hardware backends.</li>
-          </ul>
+        <!-- 2 -->
+        <div class="research-card">
+          <img src="assets/images/quantum_linear.png" alt="Quantum">
+          <h3>Quantum–Classical Hybrid Solvers</h3>
           <button class="read-more-btn">Read More</button>
           <div class="extra-content">
             <p>
-              The project focuses on hybrid quantum-classical workflows integrating variational quantum solvers 
-              with classical optimization loops. Emphasis was placed on circuit depth reduction, parameter initialization, 
-              and hardware noise mitigation. Results provide insights into the practical feasibility of near-term quantum linear solvers.
+              Implemented HHL and VQLS algorithms to solve linear systems using hybrid quantum-classical architectures.
+              Explored hybrid solvers via the XACC framework, focusing on noise mitigation and circuit depth optimization for NISQ devices.
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Item 3 -->
-      <div class="research-item">
-        <img src="assets/images/fem_solver.png" alt="FEM Solver" class="research-img">
-        <div class="research-content">
-          <h3>Object-Oriented Development of an Advanced Nonlinear FEM Solver in Java</h3>
-          <ul>
-            <li>Developed modular FEM architecture with extensible material and boundary models.</li>
-            <li>Implemented Newton–Raphson and arc-length methods for nonlinear structural analysis.</li>
-            <li>Enabled visualization and post-processing for convergence and deformation study.</li>
-          </ul>
+        <!-- 3 -->
+        <div class="research-card">
+          <img src="assets/images/fem_solver.png" alt="FEM">
+          <h3>Nonlinear FEM Solver in Java</h3>
           <button class="read-more-btn">Read More</button>
           <div class="extra-content">
             <p>
-              The FEM solver adopts a fully object-oriented architecture featuring abstract base classes 
-              for elements, materials, and solvers. Nonlinear solution strategies were tested on buckling and 
-              post-buckling problems, achieving robust convergence and extensibility for future development.
+              Developed an object-oriented finite element code for nonlinear mechanics using Newton–Raphson and arc-length methods.
+              Implemented modular material and boundary classes, achieving reliable convergence for complex post-buckling simulations.
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Item 4 -->
-      <div class="research-item">
-        <img src="assets/images/ai_placeholder.png" alt="AI Surrogate Model" class="research-img">
-        <div class="research-content">
-          <h3>AI for Scientific Computation</h3>
-          <ul>
-            <li>Developing surrogate modeling for Uncertainty Quantification (UQ) in simulations.</li>
-            <li>Combining classical numerical solvers with machine learning acceleration.</li>
-          </ul>
+        <!-- 4 -->
+        <div class="research-card">
+          <img src="assets/images/ai_placeholder.png" alt="AI">
+          <h3>AI for Scientific Computing (to be updated)</h3>
           <button class="read-more-btn">Read More</button>
           <div class="extra-content">
             <p>
-              Ongoing research focuses on data-driven surrogate models leveraging Gaussian Processes 
-              and Neural Operators to approximate complex PDE solutions. 
-              The aim is to accelerate uncertainty propagation in multiscale simulations.
+              Integrating surrogate models with traditional solvers to accelerate Uncertainty Quantification (UQ) workflows.
+              Leveraging Gaussian Processes and Neural Operators for PDE approximation and accelerating multiscale simulations.
             </p>
           </div>
         </div>
-      </div>
 
+      </div>
     </section>
   </main>
 
@@ -116,7 +87,6 @@
   </footer>
 
   <script>
-    // 展开/收起交互逻辑
     document.querySelectorAll(".read-more-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const content = btn.nextElementSibling;
