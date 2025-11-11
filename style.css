@@ -1,234 +1,305 @@
-/* Basic Reset */
+/* =========================
+   Basic Reset
+========================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #0b0c2a;
+  color: #fff;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
-    background: #0b0c2a;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* =========================
+   Navigation
+========================= */
+header, nav {
+  width: 100%;
 }
 
-/* Navigation - Fixed Top */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
 }
 
 nav .logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
 }
 
 nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
 nav .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 nav .nav-links a:hover,
 nav .nav-links a.active {
-    color: #00bcd4;
+  color: #00bcd4;
 }
 
-/* Buttons */
+/* =========================
+   Buttons
+========================= */
 .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #00bcd4;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 20px;
-    transition: 0.3s;
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 20px;
+  transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #0097a7;
+  background-color: #0097a7;
 }
 
-/* Main content sections */
+/* =========================
+   Home Section
+========================= */
+#home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+#home .home-content {
+  position: relative;
+  z-index: 2;
+}
+
+#home h1 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+/* Particles.js canvas */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* =========================
+   Sections
+========================= */
 main, section {
-    flex: 1;
-    padding: 120px 60px 60px 60px; /* 顶部留空间给导航栏 */
+  flex: 1;
+  padding: 120px 60px 60px 60px; /* 顶部留出导航高度 */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Section headings */
 h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #fff;
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #fff;
 }
 
-/* Research items */
-.research-item {
-    margin-bottom: 60px;
+/* =========================
+   About Me / Profile Page
+========================= */
+.main-content {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
-.research-item img {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px;
-    border-radius: 12px;
+.left-column {
+  flex: 1;
+  text-align: center;
+  min-width: 250px;
 }
 
-/* Professional page */
-.prof-item {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    padding: 20px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #00bcd4;
+  box-shadow: 0 0 15px rgba(0,188,212,0.4);
 }
 
-.prof-left {
-    flex: 1;
-    min-width: 250px;
-    font-weight: bold;
-    color: #fff;
+.name {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
-.prof-left em {
-    font-weight: normal;
-    color: #ccc;
+.title {
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
-.prof-right {
-    flex: 2;
-    min-width: 300px;
+.affiliation a {
+  color: #00bcd4;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
 }
 
-.prof-right ul {
-    padding-left: 20px;
+.social-icons {
+  margin-top: 20px;
 }
 
-.prof-right li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: #ddd;
+.social-icons a {
+  color: #00bcd4;
+  font-size: 1.5em;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-/* About Me page */
-.about-container {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-    align-items: flex-start;
-}
-
-.about-left {
-    flex: 1;
-    min-width: 150px;
-    text-align: center;
-}
-
-.about-left img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 2px solid #00bcd4;
-}
-
-.about-right {
-    flex: 2;
-    min-width: 300px;
+/* Right Column Content */
+.right-column {
+  flex: 3;
+  min-width: 300px;
 }
 
 .about-heading {
-    font-size: 2.2em;
-    font-weight: 500;
-    margin-bottom: 20px;
+  font-size: 2.2em;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .about-text {
-    margin-bottom: 40px;
-    font-size: 1.1em;
+  margin-bottom: 40px;
+  font-size: 1.05em;
+  color: #ddd;
+}
+
+.about-text a {
+  color: #00bcd4;
+  text-decoration: none;
 }
 
 .section-container {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .section h3 {
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
 }
 
 .list-item {
-    list-style: none;
-    padding-left: 0;
+  list-style: disc;
+  padding-left: 20px;
+  color: #ccc;
 }
 
-.list-item li {
-    margin-bottom: 8px;
-    color: #ddd;
-}
-
+/* Education */
 .education-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
 }
 
 .education-item i {
-    font-size: 1.5em;
-    color: #00bcd4;
-    margin-right: 15px;
+  font-size: 1.5em;
+  color: #00bcd4;
+  margin-right: 15px;
 }
 
 .degree-info strong {
-    display: block;
+  display: block;
 }
 
 .degree-info span {
-    color: #ccc;
-    font-size: 0.95em;
+  color: #ccc;
+  font-size: 0.95em;
 }
 
-/* Footer */
+/* =========================
+   Professional Page
+========================= */
+.prof-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+}
+
+.prof-left {
+  flex: 1;
+  min-width: 250px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.prof-left em {
+  font-weight: normal;
+  color: #ccc;
+}
+
+.prof-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.prof-right ul {
+  padding-left: 20px;
+}
+
+.prof-right li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* =========================
+   Footer
+========================= */
 footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    background: #080919;
-    color: #888;
-    font-size: 14px;
-    margin-top: auto; /* 保证内容少时 footer 贴底 */
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background: #080919;
+  color: #888;
+  font-size: 14px;
+  margin-top: auto; /* 保证内容少时 footer 贴底 */
 }
