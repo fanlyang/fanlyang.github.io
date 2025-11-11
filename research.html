@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research | Fan Yang</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -20,91 +20,95 @@
     </nav>
   </header>
 
-  <!-- Particle Background -->
+  <!-- particles container (kept if you use it) -->
   <div id="particles-js"></div>
 
-  <section id="research">
-    <h2>Research Experience</h2>
+  <main>
+    <section id="research">
+      <h2>Research Experience</h2>
 
-    <!-- 4 个矩形主题卡片 -->
-    <div class="research-grid">
-      <div class="research-card" style="background-image: url('assets/images/md_solver.png');">
-        <div class="overlay">
-          <h3>MPI-based Molecular Dynamics Solver</h3>
-          <p>Parallelization and optimization of MD simulations using domain decomposition and cell lists.</p>
-        </div>
+      <!-- 横向卡片行（尽量一排，窄屏横向滚动） -->
+      <div class="research-row" role="list" aria-label="Research topics">
+        <!-- 卡片 1 -->
+        <article class="research-card" role="listitem" data-id="md" tabindex="0"
+                 style="background-image:url('assets/images/md_solver.png')">
+          <div class="card-content">
+            <h3>MPI-based MD Solver</h3>
+          </div>
+          <div class="card-summary">Parallelized MD with MPI domain-decomposition & cell-list optimizations.</div>
+        </article>
+
+        <!-- 卡片 2 -->
+        <article class="research-card" role="listitem" data-id="quantum" tabindex="0"
+                 style="background-image:url('assets/images/quantum_linear.png')">
+          <div class="card-content">
+            <h3>Quantum–Classical Hybrid</h3>
+          </div>
+          <div class="card-summary">HHL & VQLS implementations and XACC-based hybrid workflows.</div>
+        </article>
+
+        <!-- 卡片 3 -->
+        <article class="research-card" role="listitem" data-id="fem" tabindex="0"
+                 style="background-image:url('assets/images/fem_solver.png')">
+          <div class="card-content">
+            <h3>Nonlinear FEM Solver</h3>
+          </div>
+          <div class="card-summary">Object-oriented Java FEM with Newton–Raphson & arc-length methods.</div>
+        </article>
+
+        <!-- 卡片 4 -->
+        <article class="research-card" role="listitem" data-id="ai" tabindex="0"
+                 style="background-image:url('assets/images/ai_placeholder.png')">
+          <div class="card-content">
+            <h3>AI for Scientific Computation</h3>
+          </div>
+          <div class="card-summary">Surrogate models & UQ to accelerate simulation pipelines (coming soon).</div>
+        </article>
       </div>
 
-      <div class="research-card" style="background-image: url('assets/images/quantum_linear.png');">
-        <div class="overlay">
-          <h3>Quantum-Classical Hybrid Computing</h3>
-          <p>Implementing HHL and VQLS algorithms for solving linear systems with quantum acceleration.</p>
-        </div>
+      <!-- 卡片下方的简短提示（可选） -->
+      <p class="hint">Click a topic to see a short animated expansion with detailed description below.</p>
+
+      <!-- 详细介绍区：每个主题一节，初始是折叠的 -->
+      <div class="research-details" id="research-details">
+        <article class="detail-panel" id="detail-md" aria-hidden="true">
+          <h3>MPI-based Parallelization and Optimization of a Classical Molecular Dynamics Solver</h3>
+          <ul>
+            <li>Hand-coded an MD solver in C++ (Velocity-Verlet integrator).</li>
+            <li>Designed and implemented MPI domain decomposition for load balancing.</li>
+            <li>Optimized short-range force calculations with Cell List and 26-neighbor communication to reduce MPI overhead and improve scalability.</li>
+          </ul>
+        </article>
+
+        <article class="detail-panel" id="detail-quantum" aria-hidden="true">
+          <h3>Quantum–Classical Hybrid Computing for Linear Systems</h3>
+          <ul>
+            <li>Implemented HHL and VQLS to study hybrid solutions for Ax = b.</li>
+            <li>Orchestrated hybrid workflows using the XACC framework across simulators and real backends.</li>
+            <li>Benchmarked performance focusing on low-level compilation and IR optimization.</li>
+          </ul>
+        </article>
+
+        <article class="detail-panel" id="detail-fem" aria-hidden="true">
+          <h3>Object-Oriented Development of an Advanced Nonlinear FEM Solver</h3>
+          <ul>
+            <li>Built modular Java FEM solver for 1D/extendable elements with post-processing visualization.</li>
+            <li>Implemented Newton-Raphson and generalized arc-length method for reliable nonlinear convergence.</li>
+          </ul>
+        </article>
+
+        <article class="detail-panel" id="detail-ai" aria-hidden="true">
+          <h3>AI for Scientific Computation (Uncertainty Quantification)</h3>
+          <p>Developing surrogate modeling methods to accelerate UQ workflows — training surrogate models on classical simulation outputs to drastically reduce computation time for parameter sweeps.</p>
+        </article>
       </div>
-
-      <div class="research-card" style="background-image: url('assets/images/fem_solver.png');">
-        <div class="overlay">
-          <h3>Nonlinear Finite Element Solver</h3>
-          <p>Object-oriented FEM architecture and nonlinear solution algorithms in Java.</p>
-        </div>
-      </div>
-
-      <div class="research-card" style="background-image: url('assets/images/ai_placeholder.png');">
-        <div class="overlay">
-          <h3>AI for Scientific Computation</h3>
-          <p>Developing surrogate models for UQ and accelerating simulation pipelines.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 下方详细介绍 -->
-    <div class="research-details">
-      <h3>MPI-based Parallelization and Optimization of a Classical Molecular Dynamics Solver</h3>
-      <ul>
-        <li>Hand-coded an MD solver in C++ (Velocity-Verlet integrator), with MPI domain decomposition for load balancing.</li>
-        <li>Optimized short-range force calculations using Cell List and 26-neighbor communication, minimizing MPI overhead.</li>
-      </ul>
-
-      <h3>Quantum-Classical Hybrid Computing for Linear Systems</h3>
-      <ul>
-        <li>Compared HHL and VQLS algorithms for solving Ax=b using hybrid architectures.</li>
-        <li>Utilized the XACC framework to orchestrate hybrid workflows with multiple quantum backends.</li>
-        <li>Performed performance benchmarking beyond high-level SDKs, focusing on IR transformations.</li>
-      </ul>
-
-      <h3>Object-Oriented Development of an Advanced Nonlinear FEM Solver in Java</h3>
-      <ul>
-        <li>Developed a modular FEM solver supporting abstraction and polymorphism for extensibility.</li>
-        <li>Implemented Newton–Raphson and arc-length methods to handle nonlinear and post-buckling analysis.</li>
-      </ul>
-
-      <h3>AI for Scientific Computation (Coming Soon)</h3>
-      <p>Designing surrogate modeling methods for Uncertainty Quantification (UQ) to enhance computational efficiency in scientific simulations.</p>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Fan Yang | Designed for Ph.D. Application Portfolio</p>
   </footer>
 
-  <!-- Particles.js -->
-  <script src="assets/js/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {"value":80},
-        "color":{"value":"#00bcd4"},
-        "shape":{"type":"circle"},
-        "opacity":{"value":0.5},
-        "size":{"value":3},
-        "line_linked":{"enable":true,"distance":150,"color":"#00bcd4","opacity":0.4,"width":1},
-        "move":{"enable":true,"speed":2,"direction":"none","out_mode":"bounce"}
-      },
-      "interactivity":{
-        "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"}}
-      },
-      "retina_detect": true
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
