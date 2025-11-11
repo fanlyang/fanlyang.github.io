@@ -25,20 +25,33 @@ html, body {
 }
 
 /* main 占满剩余空间 */
-.main-content {
+main, .main-content {
   flex: 1;
-  margin: 50px auto 0 auto;
-  padding: 0 20px;
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px 20px 20px;
+  gap: 40px; /* 左右间距 */
 }
 
-/* About Me 页面宽度 */
+/* 左右分栏 */
+.left-column {
+  flex: 0 0 250px;
+  text-align: center;
+}
+
+.right-column {
+  flex: 1;
+  max-width: 700px;
+}
+
+/* 页面宽度控制 */
 .main-content.about {
   max-width: 1000px;
 }
 
-/* Professional 页面宽度比 About Me 多 100px */
 .main-content.professional {
-  max-width: 1000px;
+  max-width: 1100px; /* Professional 页面比 About Me 多100px */
 }
 
 /* =========================
@@ -51,12 +64,12 @@ nav {
   width: 100%;
   height: 70px;
   display: flex;
-  justify-content: flex-start; /* 靠左对齐 */
+  justify-content: flex-start;
   align-items: center;
+  padding: 0 50px;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
   z-index: 1000;
-  padding: 0 50px;
 }
 
 nav ul.nav-links {
@@ -64,7 +77,7 @@ nav ul.nav-links {
   gap: 30px;           /* 菜单间距 */
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding: 0;
   flex-wrap: nowrap;
 }
 
@@ -72,13 +85,35 @@ nav ul.nav-links li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  white-space: nowrap;  /* 防止换行 */
+  white-space: nowrap;
   transition: color 0.3s;
 }
 
 nav ul.nav-links li a:hover,
 nav ul.nav-links li a.active {
   color: #1abc9c;
+}
+
+/* 手机屏幕导航竖排 */
+@media screen and (max-width: 768px) {
+  nav ul.nav-links {
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background: #080919;
+  color: #888;
+  font-size: 14px;
+  margin-top: auto; /* 贴底 */
 }
 
 /* =========================
@@ -103,12 +138,6 @@ nav ul.nav-links li a.active {
 /* =========================
    About Me / Profile Page
 ========================= */
-.left-column {
-  flex: 0 0 250px;
-  text-align: center;
-  padding-right: 30px;
-}
-
 .profile-picture {
   width: 150px;
   height: 150px;
@@ -147,10 +176,6 @@ nav ul.nav-links li a.active {
 }
 
 /* Right Column */
-.right-column {
-  flex: 1;
-}
-
 .about-heading {
   font-size: 2em;
   margin-bottom: 15px;
@@ -219,7 +244,7 @@ nav ul.nav-links li a.active {
   flex-wrap: wrap;
   padding: 20px;
   border-radius: 12px;
-  background: transparent; /* 不使用底色 */
+  background: transparent;
 }
 
 .prof-left {
@@ -261,7 +286,7 @@ nav ul.nav-links li a.active {
 }
 
 .research-card {
-  background: transparent; /* 不用深色底 */
+  background: transparent;
   border-radius: 12px;
   padding: 20px;
   width: calc(25% - 15px);
@@ -300,10 +325,10 @@ nav ul.nav-links li a.active {
 }
 
 /* =========================
-   Responsive
+   Responsive Layout
 ========================= */
 @media screen and (max-width: 768px) {
-  .main-content {
+  main, .main-content {
     flex-direction: column;
     align-items: center;
   }
@@ -314,22 +339,4 @@ nav ul.nav-links li a.active {
   .right-column {
     max-width: 100%;
   }
-
-  nav ul.nav-links {
-    flex-direction: column; /* 手机屏幕可以竖着显示 */
-    align-items: center;
-  }
-}
-
-/* =========================
-   Footer
-========================= */
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  background: #080919;
-  color: #888;
-  font-size: 14px;
-  margin-top: auto; /* 贴底 */
 }
