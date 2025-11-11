@@ -192,66 +192,7 @@ section h2 {
   background: #0097a7;
 }
 
-.about-container {
-  display: flex;
-  gap: 30px;           /* 间距略缩小 */
-  flex-wrap: wrap;
-  margin-top: 60px;     /* 上方过多空白可减少 */
-  margin-bottom: 40px;
-  align-items: flex-start;
-}
 
-.about-left {
-  flex: 1;
-  min-width: 180px;      /* 适应缩小图片 */
-  display: flex;
-  justify-content: center;
-}
-
-.about-left img {
-  width: 200px;          /* 稍大一点，更平衡 */
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid #00bcd4;
-}
-
-.photo-contact p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #ccc;
-}
-
-.photo-contact p strong {
-  color: #fff;
-  font-size: 16px;
-}
-
-.about-right {
-  flex: 2;
-  min-width: 300px;
-}
-
-.intro {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  color: #ddd;
-}
-
-h3 {
-  font-size: 22px;
-  color: #fff;
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-
-.education-item {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
 
 /* Footer */
 footer {
