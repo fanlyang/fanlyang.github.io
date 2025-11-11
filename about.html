@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me - Fan Yang</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
             line-height: 1.6;
+            background-color: #0b0c2a;
+            color: #fff;
         }
 
         .header {
@@ -19,41 +21,42 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #444;
+            position: fixed;
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
         }
 
         .nav a {
             margin-left: 20px;
             text-decoration: none;
-            color: #333;
+            color: #fff;
             font-weight: 500;
         }
 
         .nav a:hover, .nav a.active {
-            color: #1abc9c; /* Example color based on the green links */
+            color: #00bcd4;
         }
 
         .icon-container i {
             margin-left: 15px;
             cursor: pointer;
+            color: #00bcd4;
         }
 
         .main-content {
             display: flex;
             max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 50px;
+            margin: 120px auto 50px auto; /* 顶部留出导航高度 */
+            padding: 0 20px;
+            gap: 50px;
         }
 
         .left-column {
             flex: 1;
             text-align: center;
-            padding-right: 50px;
             min-width: 250px;
-        }
-
-        .right-column {
-            flex: 3;
         }
 
         .profile-picture {
@@ -61,7 +64,9 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            border: 3px solid #00bcd4;
+            box-shadow: 0 0 15px rgba(0,188,212,0.4);
         }
 
         .name {
@@ -71,19 +76,19 @@
         }
 
         .title {
-            color: #666;
+            color: #ccc;
             margin-bottom: 15px;
         }
 
         .affiliation a {
-            color: #1abc9c;
+            color: #00bcd4;
             text-decoration: none;
             display: block;
             margin-top: 5px;
         }
 
         .social-icons a {
-            color: #1abc9c;
+            color: #00bcd4;
             font-size: 1.5em;
             margin: 0 5px;
             text-decoration: none;
@@ -91,43 +96,49 @@
         }
 
         .social-icons {
-            margin-top: 25px;
+            margin-top: 20px;
+        }
+
+        .right-column {
+            flex: 3;
+            min-width: 300px;
         }
 
         .about-heading {
-            font-size: 2.5em;
+            font-size: 2.2em;
             font-weight: 400;
             margin-bottom: 20px;
         }
 
         .about-text a {
-            color: #1abc9c;
+            color: #00bcd4;
             text-decoration: none;
         }
 
         .about-text {
             margin-bottom: 40px;
-            font-size: 1.1em;
+            font-size: 1.05em;
+            color: #ddd;
         }
 
         .section-container {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
         }
 
         .section h3 {
             font-size: 1.5em;
             font-weight: 500;
             margin-bottom: 15px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
         }
 
         .list-item {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .list-item li {
-            margin-bottom: 8px;
+            list-style: disc;
+            padding-left: 20px;
+            color: #ccc;
         }
 
         .education-item {
@@ -138,7 +149,7 @@
 
         .education-item i {
             font-size: 1.5em;
-            color: #333;
+            color: #00bcd4;
             margin-right: 15px;
         }
 
@@ -147,8 +158,18 @@
         }
 
         .degree-info span {
-            color: #666;
+            color: #ccc;
             font-size: 0.95em;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: #080919;
+            color: #888;
+            font-size: 14px;
+            margin-top: 40px;
         }
 
     </style>
@@ -157,47 +178,50 @@
 
     <header class="header">
         <nav class="nav">
-            <a class="active" href="#">Home</a>
-            <a href="#">Skills</a>
-            <a href="#">Projects</a>
-            <a href="#">Publications</a>
-            <a href="#">Contact</a>
-            <a href="#">CV</a>
+            <a class="active" href="index.html">Home</a>
+            <a href="professional.html">Professional</a>
+            <a href="research.html">Research</a>
+            <a href="about.html">About Me</a>
+            <a href="assets/pdf/cv.pdf" target="_blank">CV</a>
         </nav>
         <div class="icon-container">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-envelope"></i>
             <i class="fas fa-moon"></i>
         </div>
     </header>
 
     <div class="main-content">
+        <!-- 左侧头像和简介 -->
         <div class="left-column">
-            <img src="placeholder_image.jpg" alt="Nikoloz Sirmpilatze" class="profile-picture">
-            <h1 class="name">Nikoloz Sirmpilatze</h1>
-            <p class="title">PhD student</p>
+            <img src="assets/images/profile.jpeg" alt="Fan Yang" class="profile-picture">
+            <h1 class="name">Fan Yang</h1>
+            <p class="title">Computational Scientist</p>
             <div class="affiliation">
-                <a href="#">German Primate Center</a>
-                <a href="#">IMPRS for Neurosciences</a>
-                <a href="#">University of Göttingen</a>
+                <a href="#">Xiamen, China</a>
+                <a href="mailto:your.email@domain.com">your.email@domain.com</a>
             </div>
             <div class="social-icons">
-                <a href="#"><i class="fas fa-envelope"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-google"></i></a> <a href="#"><i class="fab fa-github"></i></a> </div>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
 
+        <!-- 右侧文字内容 -->
         <div class="right-column">
-            <h2 class="about-heading">About me</h2>
+            <h2 class="about-heading">About Me</h2>
             <p class="about-text">
-                My name is Nikoloz (Niko) Sirmpilatze and I am a PhD student at the <a href="#">Functional Imaging Lab</a> of the German Primate Center in Göttingen, Germany. My PhD project focuses on the effects of anesthesia on brain function - a topic that I explore via functional Magnetic Resonance Imaging (fMRI). I collect and analyze neuroimaging data from multiple mammalian species, including humans, non-human primates and rodents. I am passionate about dancing to swing music (Lindy Hop, Charleston, Collegiate Shag) and have recently picked up the saxophone.
+                I am Fan Yang, currently pursuing a Master in Computational Engineering. My research focuses on accelerating scientific computations using HPC, Quantum Computing, and AI-based surrogate models. Previously, I implemented FEM solvers for engineering problems, parallelized molecular dynamics simulations using MPI, and explored hybrid quantum-classical algorithms for linear systems. My goal is to integrate these approaches to solve complex multi-scale problems efficiently.
             </p>
 
             <div class="section-container">
                 <div class="section">
                     <h3>Interests</h3>
                     <ul class="list-item">
-                        <li>• Neuroscience</li>
-                        <li>• Neuroimaging (fMRI)</li>
-                        <li>• Anesthesia</li>
-                        <li>• Swing music and dances</li>
+                        <li>Neuroscience</li>
+                        <li>Neuroimaging (fMRI)</li>
+                        <li>Anesthesia</li>
+                        <li>Swing music and dances</li>
                     </ul>
                 </div>
 
@@ -206,29 +230,31 @@
                     <div class="education-item">
                         <i class="fas fa-graduation-cap"></i>
                         <div class="degree-info">
-                            <strong>PhD in Neuroimaging, 2017-present</strong>
-                            <span>German Primate Center</span>
+                            <strong>MSc in Computational Engineering, 2023-present</strong>
+                            <span>Ruhr-Universität Bochum</span>
                         </div>
                     </div>
                     <div class="education-item">
                         <i class="fas fa-graduation-cap"></i>
                         <div class="degree-info">
-                            <strong>MSc in Neuroscience, 2015-2017</strong>
-                            <span>University of Göttingen</span>
-                        </div>
-                    </div>
-                    <div class="education-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div class="degree-info">
-                            <strong>Doctor of Medicine (MD), 2009-2015</strong>
-                            <span>Aristotle University of Thessaloniki</span>
+                            <strong>BSc in Engineering Mechanics, 2012-2016</strong>
+                            <span>Hohai University, China</span>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="section" style="margin-top:40px;">
+                <h3>Publications</h3>
+                <p>Fu, L., Yang, F., & Shi, Y. (2023). Exploration and practice of a UDI-based management model [in Chinese]. China Medical Device Information. Contribution: Second author. Led the conceptual design and system framework; coordinated cross-department collaboration to integrate six hospital information systems, enhancing data interoperability and integrity.</p>
+            </div>
+
         </div>
     </div>
+
+    <footer>
+        &copy; 2025 Fan Yang | Designed for Ph.D. Application Portfolio
+    </footer>
 
 </body>
 </html>
