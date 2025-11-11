@@ -292,130 +292,66 @@ h2 {
 }
 
 /* =========================
-   Research Flip Cards Layout
+   Research Grid & Cards
 ========================= */
-#research {
-  padding: 80px 10% 60px;
-  text-align: center;
-}
-
-#research h2 {
-  font-size: 2rem;
-  color: #00bcd4;
-  margin-bottom: 50px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* 一行四个卡片 */
 .research-grid {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 .research-card {
-  flex: 1 1 calc(25% - 25px);
-  max-width: calc(25% - 25px);
-  perspective: 1000px;
-  height: 320px;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s;
-  transform-style: preserve-3d;
-}
-
-.research-card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* 正反面样式 */
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
   background: rgba(255,255,255,0.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 20px;
+  width: 23%;       /* 4 列 */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 20px;
-  color: #fff;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card-front img {
+.research-card img {
   width: 100%;
-  height: 130px;
+  height: 250px;    /* 放大图片 */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.card-front h3 {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-.card-front p {
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  justify-content: space-between;
-}
-
-.card-back h3 {
-  color: #00bcd4;
-  font-size: 1.1rem;
+.research-card h3 {
+  font-size: 1.3em;
   margin-bottom: 10px;
-}
-
-.card-back p {
-  font-size: 0.9rem;
-  color: #ddd;
-  line-height: 1.4;
-}
-
-.read-more-btn {
-  align-self: flex-start;
-  background: none;
-  border: 1px solid #00bcd4;
-  color: #00bcd4;
-  border-radius: 6px;
-  padding: 6px 14px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 0.9rem;
-}
-
-.read-more-btn:hover {
-  background-color: #00bcd4;
   color: #fff;
 }
 
-/* 响应式 */
-@media (max-width: 1200px) {
+.research-card p {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* Hover 放大效果 */
+.research-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,188,212,0.3);
+}
+
+/* 响应式布局 */
+@media screen and (max-width: 1200px) {
   .research-card {
-    flex: 1 1 calc(50% - 25px);
-    max-width: calc(50% - 25px);
+    width: 48%;
   }
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .research-card {
-    flex: 1 1 100%;
-    max-width: 100%;
+    width: 100%;
   }
 }
+
 
 /* =========================
    Footer
