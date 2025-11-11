@@ -292,85 +292,112 @@ h2 {
 }
 
 /* =========================
-   Research Page (Grid Layout)
+   Research: horizontal cards + details
 ========================= */
 #research {
-  padding: 120px 10%;
-  text-align: center;
+  padding-top: 40px; /* main/section 已经有上内边距；这里微调 */
 }
 
-#research h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #fff;
+/* 横向一排，窄屏可横向滚动 */
+.research-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 6px 20px 6px;
+  margin-bottom: 12px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
+/* 卡片（扁长矩形） */
 .research-card {
-  position: relative;
-  height: 220px;
+  flex: 0 0 28%;            /* 视窗较大时三张或四张并排，按需调整 */
+  min-width: 260px;         /* 确保在窄屏可横向滚动 */
+  height: 160px;
+  border-radius: 12px;
   background-size: cover;
   background-position: center;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 300ms ease, box-shadow 300ms ease;
   cursor: pointer;
-}
-
-.research-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-}
-
-.research-card .overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.15));
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
-  text-align: left;
-  transition: background 0.3s ease;
+  color: #fff;
 }
 
-.research-card:hover .overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));
+/* 卡片被选中/悬停样式 */
+.research-card:hover,
+.research-card.active {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
 }
 
-.overlay h3 {
-  font-size: 1.3em;
+/* 卡片下方的短简介 */
+.card-summary {
+  font-size: 0.95em;
+  color: rgba(255,255,255,0.95);
+  padding: 10px 12px;
+  background: rgba(0,0,0,0.35);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* 卡片内部标题覆盖层（淡黑渐变） */
+.card-content {
+  padding: 14px 16px 8px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
+}
+
+/* 概要下的提示文本 */
+.hint {
+  text-align: center;
+  color: #bfc9cb;
+  margin-bottom: 12px;
+}
+
+/* 详细介绍区：折叠/展开动画（用max-height过渡） */
+.research-details {
+  width: 100%;
+  margin-top: 12px;
+  display: block;
+}
+
+/* 每个 detail-panel 初始折叠 */
+.detail-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 400ms ease, opacity 300ms ease;
+  opacity: 0;
+  background: rgba(255,255,255,0.03);
+  padding: 0 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* 打开时样式（由 JS 添加 .open） */
+.detail-panel.open {
+  padding: 18px;
+  max-height: 800px; /* 足够展开内容 */
+  opacity: 1;
+}
+
+/* detail 内部排版 */
+.detail-panel h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.detail-panel p,
+.detail-panel ul {
+  color: #dcdcdc;
   margin-bottom: 8px;
 }
 
-.overlay p {
-  font-size: 0.9em;
-  line-height: 1.4em;
-}
-
-.research-details {
-  margin-top: 60px;
-  text-align: left;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-.research-details h3 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #fff;
+/* 小屏微调：卡片更窄，行内可见1~2张 */
+@media (max-width: 900px) {
+  .research-card { flex: 0 0 70%; min-width: 320px; height: 170px; }
 }
 
 
