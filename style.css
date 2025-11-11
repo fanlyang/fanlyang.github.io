@@ -4,39 +4,53 @@ body {
   color: #222;
   scroll-behavior: smooth;
 }
-
 /* 导航栏 */
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  height: 70px;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
-  padding: 10px 40px;
+  align-items: center;
+  padding: 0 40px;
   z-index: 1000;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
 }
 
 nav .logo {
   color: #fff;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 nav .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
 }
 
 nav .nav-links a {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
   transition: color 0.3s;
 }
 
 nav .nav-links a:hover {
   color: #00bcd4;
+}
+
+/* 为了防止导航遮挡内容 */
+section {
+  scroll-margin-top: 80px;
 }
 
 /* Home */
