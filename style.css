@@ -10,7 +10,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: space-between;
   padding: 10px 40px;
@@ -62,6 +62,8 @@ nav .nav-links a:hover {
   position: relative;
   top: 45%;
   transform: translateY(-50%);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero-text h1 {
@@ -70,6 +72,20 @@ nav .nav-links a:hover {
 
 .hero-text p {
   font-size: 1.2em;
+  margin-top: 15px;
+}
+
+.home-images {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.home-images img {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .btn {
@@ -87,7 +103,7 @@ nav .nav-links a:hover {
   background: #008c9e;
 }
 
-/* 通用内容 */
+/* 内容页 */
 .content {
   padding: 100px 80px;
   background: #f8f8f8;
@@ -103,12 +119,29 @@ h2 {
   margin-top: 25px;
 }
 
-.profile {
-  width: 160px;
-  border-radius: 50%;
+.research-item img {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* About Me 照片墙 */
+.photo-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
+.photo-gallery img {
+  width: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
