@@ -2,206 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name | Research Homepage</title>
-  <style>
-    body {
-      font-family: "Helvetica", "Arial", sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #222;
-      display: flex;
-      flex-direction: row;
-      min-height: 100vh;
-    }
-    /* 左侧栏 */
-    .sidebar {
-      background: #fff;
-      width: 280px;
-      padding: 30px 20px;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .profile-pic {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    .name {
-      font-size: 1.6em;
-      font-weight: bold;
-      margin-bottom: 5px;
-      text-align: center;
-    }
-    .title {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 15px;
-    }
-    .contact a {
-      color: #0056b3;
-      text-decoration: none;
-      display: block;
-      margin: 4px 0;
-      text-align: center;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    .cv-button {
-      display: inline-block;
-      margin-top: 15px;
-      background: #0056b3;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s ease;
-    }
-    .cv-button:hover {
-      background: #003f80;
-    }
-
-    /* 右侧主体内容 */
-    .main {
-      flex: 1;
-      padding: 40px 50px;
-      overflow-y: auto;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-      color: #333;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    p {
-      margin-bottom: 10px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 60px;
-    }
-
-    /* 响应式布局 */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        box-shadow: none;
-        border-bottom: 1px solid #eee;
-      }
-      .main {
-        padding: 20px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Yang | Research Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-  <!-- 左侧栏 -->
-  <div class="sidebar">
-    <img src="profile.jpg" alt="Your photo" class="profile-pic">
-    <div class="name">Fan Yang</div>
-    <div class="title">Ph.D. Applicant | Computational Physics | Quantum Computing</div>
-    <div class="contact">
-      <a href="mailto:your.email@domain.com">Email</a>
-      <a href="https://github.com/yourusername">GitHub</a>
-      <a href="https://www.linkedin.com/in/yourlinkedin/">LinkedIn</a>
+  <!-- 导航栏 -->
+  <nav>
+    <div class="logo">Fan Yang</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#professional">Professional</a></li>
+      <li><a href="#about">About Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home 页面 -->
+  <section id="home" class="hero">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/images/bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      <h1>Fan Yang</h1>
+      <p>Quantum Computing · HPC · Molecular Simulation</p>
+      <p>Bridging Classical Algorithms and Quantum Frontiers</p>
+      <a href="assets/pdf/CV_FanYang.pdf" class="btn">Download CV (PDF)</a>
     </div>
-    <a href="cv.pdf" class="cv-button" download>📄 Download CV (PDF)</a>
-  </div>
+  </section>
 
-  <!-- 右侧内容 -->
-  <div class="main">
-    <section>
-      <h2>Research Experience</h2>
-      <p><b>MPI-based Parallelization and Optimization of a Classical Molecular Dynamics Solver</b></p>
-      <ul>
-        <li>Hand-coded an MD solver from scratch in C++ (including Velocity-Verlet). Implemented a Domain Decomposition strategy using MPI for efficient load balancing.</li>
-        <li>Optimized short-range force calculations via the Cell List method and 26-Neighbor Cell Communication Scheme, minimizing MPI overhead and achieving high scalability.</li>
-      </ul>
+  <!-- Research 页面 -->
+  <section id="research" class="content">
+    <h2>Research Experience</h2>
+    <div class="research-item">
+      <h3>MPI-based Parallelization of Molecular Dynamics Solver</h3>
+      <p>Hand-coded a classical MD solver in C++ using Velocity-Verlet, designed a robust domain decomposition strategy, and optimized short-range force calculation with Cell Lists and 26-Neighbor communication.</p>
+    </div>
 
-      <p><b>Quantum-Classical Hybrid Computing for Linear Systems</b></p>
-      <ul>
-        <li>Implemented HHL and VQLS algorithms for solving Ax=b and benchmarked against classical solvers.</li>
-        <li>Utilized XACC to orchestrate hybrid workflows integrating multiple quantum backends (simulators and hardware).</li>
-        <li>Focused on compiler-level optimization, IR transformations, and hybrid execution efficiency.</li>
-      </ul>
+    <div class="research-item">
+      <h3>Quantum-Classical Hybrid Computing for Linear Systems</h3>
+      <p>Implemented HHL and VQLS algorithms using the XACC framework to integrate multiple quantum backends; benchmarked performance vs classical solvers at the compiler level.</p>
+    </div>
 
-      <p><b>Object-Oriented Development of an Advanced Nonlinear FEM Solver in Java</b></p>
-      <ul>
-        <li>Built an object-oriented FEM solver from scratch in Java with modular extensible design.</li>
-        <li>Emphasized abstraction and polymorphism to enable integration of new element types and material models.</li>
-        <li>Implemented nonlinear solvers (Newton–Raphson, arc-length) for robust convergence in post-buckling phenomena.</li>
-      </ul>
-    </section>
+    <div class="research-item">
+      <h3>Object-Oriented Nonlinear FEM Solver in Java</h3>
+      <p>Developed an extensible FEM solver capable of nonlinear analysis with Newton–Raphson and arc-length methods, emphasizing modular architecture and polymorphism.</p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Publication</h2>
-      <ul>
-        <li>
-          Fu, L., Yang, F., & Shi, Y. (2023). <i>Exploration and practice of a UDI-based management model [in Chinese]</i>. <b>China Medical Device Information</b>.<br>
-          <b>Contribution:</b> Second author. Led conceptual design and system framework; coordinated multi-department integration of six hospital information systems.
-        </li>
-      </ul>
-    </section>
+  <!-- Professional 页面 -->
+  <section id="professional" class="content">
+    <h2>Professional Experience</h2>
+    <h3>Xiamen Cardiovascular Hospital, Xiamen University</h3>
+    <p>Led algorithm design for medical device management systems, integrating UDI-based data from six hospital systems, improving interoperability and data integrity.</p>
 
-    <section>
-      <h2>Professional Experience</h2>
-      <p><b>Xiamen Cardiovascular Hospital, Xiamen University</b> — Fujian, China (2017–2023)</p>
-      <ul>
-        <li><b>Algorithmic Design & Systems Architecture</b></li>
-        <ul>
-          <li>Designed predictive algorithms for medical consumable procurement and inventory optimization within HRP systems.</li>
-          <li>Led architecture linking six hospital systems through unified UDI interfaces, improving interoperability.</li>
-          <li>Collaborated with engineers to implement algorithms and perform parameter tuning and model validation.</li>
-          <li>Acted as liaison between clinicians and developers, defining optimization logic and data schemas.</li>
-        </ul>
+    <h3>Xiamen International Bank</h3>
+    <p>Completed quantitative risk analysis training and developed analytical workflows for structured decision processes.</p>
+  </section>
 
-        <li><b>Reliability & Failure Investigation</b></li>
-        <ul>
-          <li>Led investigations into device-related adverse events (e.g., stent deformation, balloon failure) combining mechanical and clinical data.</li>
-          <li>Conducted structured failure mode analysis and worked with manufacturers for design feedback.</li>
-          <li>Developed data-driven workflows for malfunction tracking across departments.</li>
-        </ul>
-      </ul>
+  <!-- About 页面 -->
+  <section id="about" class="content">
+    <h2>About Me</h2>
+    <img src="assets/images/profile.jpg" alt="Fan Yang" class="profile">
+    <p>I'm Fan Yang, an aspiring Ph.D. student passionate about quantum computing, high-performance simulations, and numerical modeling of complex systems.</p>
+    <p>Email: <a href="mailto:fanyang@example.com">fanyang@example.com</a></p>
+  </section>
 
-      <p><b>Xiamen International Bank, Corp. LTD</b> — Fujian, China</p>
-      <ul>
-        <li>Completed intensive training in quantitative risk analysis, gaining hands-on experience with structured decision-making and data flow management.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Awards & Certificates</h2>
-      <ul>
-        <li><b>C Programming Language</b> — National Computer Rank Examination</li>
-        <li><b>Academic Progress Award and Scholarship</b> — Hohai University</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>© 2025 Fan Yang | Germany </p>
-    </footer>
-  </div>
+  <footer>
+    <p>© 2025 Fan Yang | Designed by Fan Yang</p>
+  </footer>
 </body>
 </html>
