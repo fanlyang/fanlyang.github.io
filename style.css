@@ -179,11 +179,25 @@ h2 {
 }
 
 .about-left img {
-  width: 150px;       /* 缩小图片 */
+  width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 12px; /* 圆角 */
   border: 2px solid #00bcd4;
+}
+
+.photo-contact {
+  text-align: center;
+}
+
+.photo-contact p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.photo-contact p strong {
+  color: #fff;
 }
 
 .about-right {
@@ -191,7 +205,6 @@ h2 {
   min-width: 300px;
 }
 
-/* Education Item */
 .education-item {
   background: rgba(255,255,255,0.05);
   padding: 15px;
@@ -207,5 +220,5 @@ footer {
   background: #080919;
   color: #888;
   font-size: 14px;
-  margin-top: auto; /* 自动占位，让 footer 始终在底部 */
+  margin-top: auto; /* 保证内容少时 footer 贴底 */
 }
