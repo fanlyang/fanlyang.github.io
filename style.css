@@ -118,12 +118,48 @@ h2 {
   border-radius: 12px;
 }
 
-/* Professional Items */
+/* Professional Page Layout */
 .prof-item {
-  margin-bottom: 40px;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* 手机端自适应 */
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
+.prof-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.prof-right {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prof-right img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #444;
+}
+
+
 /* About Timeline */
+.education-item {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
 .timeline {
   display: flex;
   justify-content: center;
