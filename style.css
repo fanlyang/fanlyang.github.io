@@ -5,10 +5,17 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   background: #0b0c2a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Navigation */
@@ -100,7 +107,8 @@ nav .nav-links a:hover {
 }
 
 /* Sections */
-section {
+main, section {
+  flex: 1; /* 占据剩余空间，使 footer 始终在底部 */
   padding: 100px 60px;
 }
 
@@ -191,6 +199,7 @@ h2 {
   margin-bottom: 15px;
 }
 
+/* Footer */
 footer {
   width: 100%;
   text-align: center;
@@ -198,5 +207,5 @@ footer {
   background: #080919;
   color: #888;
   font-size: 14px;
-  margin-top: 40px; /* 和内容保持间距 */
+  margin-top: auto; /* 自动占位，让 footer 始终在底部 */
 }
