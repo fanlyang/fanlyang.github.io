@@ -15,8 +15,30 @@ html, body {
   color: #333;
 }
 
-body {
-  padding-top: 90px; /* 导航 + 间距 */
+/* =========================
+   Page Wrapper for Footer
+========================= */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* main 占满剩余空间 */
+.main-content {
+  flex: 1;
+  margin: 50px auto 0 auto;
+  padding: 0 20px;
+}
+
+/* About Me 页面宽度 */
+.main-content.about {
+  max-width: 1000px;
+}
+
+/* Professional 页面宽度比 About Me 多 100px */
+.main-content.professional {
+  max-width: 1000px;
 }
 
 /* =========================
@@ -29,25 +51,34 @@ nav {
   width: 100%;
   height: 70px;
   display: flex;
-  justify-content: flex-start;  /* 左对齐，不铺满 */
+  justify-content: flex-start; /* 靠左对齐 */
   align-items: center;
-  padding: 0 50px;              /* 左右间距 */
-  background: rgba(255,255,255,0.95); /* 半透明白色 */
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
   z-index: 1000;
-  gap: 20px;                     /* 菜单间距 */
+  padding: 0 50px;
 }
 
-nav a {
-  color: #333;                   /* 菜单文字颜色 */
+nav ul.nav-links {
+  display: flex;       /* 横向排列 */
+  gap: 30px;           /* 菜单间距 */
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  flex-wrap: nowrap;
+}
+
+nav ul.nav-links li a {
   text-decoration: none;
+  color: #333;
   font-weight: 500;
+  white-space: nowrap;  /* 防止换行 */
   transition: color 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-  color: #1abc9c;                /* 鼠标悬停或选中颜色 */
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a.active {
+  color: #1abc9c;
 }
 
 /* =========================
@@ -72,15 +103,8 @@ nav a.active {
 /* =========================
    About Me / Profile Page
 ========================= */
-.main-content {
-  display: flex;
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-
 .left-column {
-  flex: 0 0 250px; /* 固定宽度 */
+  flex: 0 0 250px;
   text-align: center;
   padding-right: 30px;
 }
@@ -125,7 +149,6 @@ nav a.active {
 /* Right Column */
 .right-column {
   flex: 1;
-  max-width: 700px; /* 限制文字行宽 */
 }
 
 .about-heading {
@@ -187,22 +210,6 @@ nav a.active {
 }
 
 /* =========================
-   Responsive
-========================= */
-@media screen and (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .left-column {
-    padding-right: 0;
-    margin-bottom: 30px;
-  }
-  .right-column {
-    max-width: 100%;
-  }
-}
-/* =========================
    Professional Page
 ========================= */
 .prof-item {
@@ -212,7 +219,7 @@ nav a.active {
   flex-wrap: wrap;
   padding: 20px;
   border-radius: 12px;
-  background: rgba(0, 188, 212, 0.05);
+  background: transparent; /* 不使用底色 */
 }
 
 .prof-left {
@@ -249,21 +256,21 @@ nav a.active {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between; /* 四个卡片左右均衡 */
+  justify-content: space-between;
   margin-top: 50px;
 }
 
 .research-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent; /* 不用深色底 */
   border-radius: 12px;
   padding: 20px;
-  width: calc(25% - 15px); /* 四个卡片并排 */
+  width: calc(25% - 15px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
-  user-select: text; /* 允许复制文字 */
+  user-select: text;
 }
 
 .research-card img {
@@ -277,33 +284,40 @@ nav a.active {
 .research-card h3 {
   font-size: 1.3em;
   margin-bottom: 10px;
-  color: #fff;
+  color: #333;
 }
 
 .research-card p {
   font-size: 1em;
-  color: #ccc;
+  color: #555;
   line-height: 1.5;
 }
 
 /* Hover 放大效果 */
 .research-card:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.1);
 }
 
 /* =========================
-   Responsive Layout
+   Responsive
 ========================= */
-@media screen and (max-width: 1200px) {
-  .research-card {
-    width: 48%;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .research-card {
-    width: 100%;
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-column {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  .right-column {
+    max-width: 100%;
+  }
+
+  nav ul.nav-links {
+    flex-direction: column; /* 手机屏幕可以竖着显示 */
+    align-items: center;
   }
 }
 
@@ -317,7 +331,5 @@ footer {
   background: #080919;
   color: #888;
   font-size: 14px;
-  margin-top: auto; /* 保证内容少时 footer 贴底 */
+  margin-top: auto; /* 贴底 */
 }
-
-
