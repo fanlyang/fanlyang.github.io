@@ -226,19 +226,19 @@ nav .nav-links a.active {
   flex-wrap: wrap;
   padding: 20px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 188, 212, 0.05);
 }
 
 .prof-left {
   flex: 1;
   min-width: 250px;
   font-weight: bold;
-  color: #fff;
+  color: #333;
 }
 
 .prof-left em {
   font-weight: normal;
-  color: #ccc;
+  color: #666;
 }
 
 .prof-right {
@@ -253,7 +253,7 @@ nav .nav-links a.active {
 .prof-right li {
   margin-bottom: 10px;
   line-height: 1.5;
-  color: #ddd;
+  color: #555;
 }
 
 /* =========================
