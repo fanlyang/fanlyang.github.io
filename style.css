@@ -289,9 +289,6 @@ footer {
 /* =========================
    Professional Page
 ========================= */
-/* =========================
-   Professional Page (改版)
-========================= */
 .prof-item {
   display: flex;
   gap: 40px;
@@ -301,7 +298,7 @@ footer {
 }
 
 .prof-left {
-  flex: 0 0 220px; /* 左侧固定宽度，整齐 */
+  flex: 0 0 440px; /* 左侧固定宽度，整齐 */
   font-weight: bold;
   color: #333;
   text-align: left;
@@ -314,6 +311,7 @@ footer {
 
 .prof-right {
   flex: 1;
+  flex: 0 0 800px; /* 右侧固定宽度 */
   min-width: 300px;
 }
 
