@@ -294,11 +294,12 @@ footer {
   gap: 40px;
   margin-bottom: 50px;
   flex-wrap: wrap;
-  padding: 0; /* 去掉背景填充 */
+  padding-left: 20px;  /* 左边留空隙 */
+  padding-right: 20px; /* 右边留空隙 */
 }
 
 .prof-left {
-  flex: 0 0 440px; /* 左侧固定宽度，整齐 */
+  flex: 0 0 480px; /* 左侧固定宽度，整齐 */
   font-weight: bold;
   color: #333;
   text-align: left;
@@ -329,6 +330,16 @@ footer {
   color: #555;
 }
 
+/* 响应式处理 */
+@media screen and (max-width: 1280px) {
+  .prof-left {
+    flex: 0 0 350px;
+  }
+  .prof-right {
+    flex: 1;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .prof-item {
     flex-direction: column;
@@ -354,7 +365,7 @@ footer {
 }
 
 .research-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: #fff; /* 改为白底，更清晰 */
   border-radius: 12px;
   padding: 20px;
   width: calc(25% - 15px);
@@ -364,6 +375,19 @@ footer {
   text-align: left;
   transition: transform 0.3s, box-shadow 0.3s;
   user-select: text;
+  color: #333; /* 默认文字颜色改深色 */
+}
+
+.research-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #111; /* 标题更深 */
+}
+
+.research-card p {
+  font-size: 1em;
+  color: #333; /* 正文字颜色更深 */
+  line-height: 1.6;
 }
 
 .research-card img {
@@ -374,19 +398,7 @@ footer {
   margin-bottom: 15px;
 }
 
-.research-card h3 {
-  font-size: 1.3em;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.research-card p {
-  font-size: 1em;
-  color: #ccc;
-  line-height: 1.5;
-}
-
-/* Hover 放大效果 */
+/* Hover 放大效果保持不变 */
 .research-card:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 188, 212, 0.3);
