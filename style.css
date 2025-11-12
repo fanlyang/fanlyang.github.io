@@ -298,6 +298,17 @@ footer {
   padding-right: 20px; /* 右边留空隙 */
 }
 
+/* 标题居中显示 */
+.page-title {
+  text-align: center; 
+  font-size: 32px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  color: #000;        /* 改为纯黑色 */
+  font-weight: 600;
+}
+
+
 .prof-left {
   flex: 0 0 480px; /* 左侧固定宽度，整齐 */
   font-weight: bold;
