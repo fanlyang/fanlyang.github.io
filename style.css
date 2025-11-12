@@ -302,8 +302,8 @@ footer {
 .page-title {
   text-align: center; 
   font-size: 32px;
-  margin-top: 60px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   color: #000;        /* 改为纯黑色 */
   font-weight: 600;
 }
@@ -374,6 +374,17 @@ footer {
   justify-content: space-between;
   margin: 50px 30px 30px 30px; /* 上间距50px，左右下留30px */;
 }
+
+/* 标题居中显示 */
+ .page-title {
+  text-align: center; 
+  font-size: 32px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #000;        /* 改为纯黑色 */
+  font-weight: 600;
+}
+
 
 .research-card {
   background: #fff; /* 改为白底，更清晰 */
