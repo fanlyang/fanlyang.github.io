@@ -11,12 +11,13 @@ html, body {
   height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
   color: #333;
 }
 
-body {
-  padding-top: 90px; /* 给导航栏预留空间 */
+/* Background for non-home pages */
+body:not(.home-body) {
+  background-color: #f9f9f9;
+  padding-top: 90px; /* Reserve space for navigation bar */
 }
 
 /* =========================
