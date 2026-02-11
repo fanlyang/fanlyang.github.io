@@ -17,7 +17,7 @@ html, body {
 /* Background for non-home pages */
 body:not(.home-body) {
   background-color: #f9f9f9;
-  padding-top: 90px; /* 给导航栏预留空间 */
+  padding-top: 90px; /* Reserve space for navigation bar */
 }
 
 /* =========================
