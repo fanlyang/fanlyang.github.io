@@ -1,71 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fan Yang | SPEEDUP</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPEEDUP - High Performance Computing</title>
 </head>
-<body class="home-body">
+<body>
+    <header>
+        <div class="hero">
+            <h1>SPEEDUP</h1>
+            <p>Your Performance, Accelerated</p>
+        </div>
+    </header>
 
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="assets/videos/video.webm" type="video/webm">
-    <source src="assets/videos/video.mp4" type="video/mp4">
-  </video>
+    <section class="metrics">
+        <div class="metric-counter">
+            <h2>10×+</h2>
+            <p>Speedup</p>
+        </div>
+        <div class="metric-counter">
+            <h2>1k+</h2>
+            <p>Cores</p>
+        </div>
+        <div class="metric-counter">
+            <h2>90%+</h2>
+            <p>Scaling Efficiency</p>
+        </div>
+    </section>
 
-  <!-- Particles Network -->
-  <div id="particles-js"></div>
+    <section class="pillars">
+        <div class="pillar">
+            <h3>High Performance Computing</h3>
+        </div>
+        <div class="pillar">
+            <h3>Artificial Intelligence</h3>
+        </div>
+        <div class="pillar">
+            <h3>Quantum Computing</h3>
+        </div>
+    </section>
 
-  <!-- Overlay -->
-  <div class="home-overlay"></div>
+    <section class="highlights">
+        <ul>
+            <li>Accelerated processing speeds</li>
+            <li>Optimized resource allocation</li>
+            <li>Innovative technology stacks</li>
+        </ul>
+    </section>
 
-  <!-- Navigation -->
-  <header class="header">
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="professional.html">Professional</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="assets/pdf/CV.pdf" target="_blank">CV</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section class="cta">
+        <a href="research.html" class="cta-button">Research</a>
+        <a href="professional.html" class="cta-button">Professional</a>
+        <a href="about.html" class="cta-button">About Us</a>
+        <a href="assets/pdf/CV.pdf" class="cta-button">Download CV</a>
+    </section>
 
-  <!-- Hero Section -->
-  <section id="home">
-    <div class="home-content">
-      <h1 class="home-title">SPEEDUP</h1>
-      <h2 class="home-subtitle">Toward Unified Acceleration in Classical, Quantum, and AI Computation</h2>
-      <a href="research.html" class="btn">Explore My Research</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Fan Yang | Designed for Ph.D. Application Portfolio
-  </footer>
-
-  <!-- Particles.js -->
-  <script src="assets/js/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {"value":80},
-        "color":{"value":"#00bcd4"},
-        "shape":{"type":"circle"},
-        "opacity":{"value":0.5},
-        "size":{"value":3},
-        "line_linked":{"enable":true,"distance":150,"color":"#00bcd4","opacity":0.4,"width":1},
-        "move":{"enable":true,"speed":2,"direction":"none","out_mode":"bounce"}
-      },
-      "interactivity":{
-        "events":{"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"}}
-      },
-      "retina_detect": true
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
