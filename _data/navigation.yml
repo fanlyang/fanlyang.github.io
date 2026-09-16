@@ -1,0 +1,11 @@
+main:
+- title: Research
+  url: /research.html
+- title: Publications
+  url: /publications.html
+- title: Experience
+  url: /professional.html
+- title: Skills & honors
+  url: /skills.html
+- title: CV
+  url: /CV_Fan_Yang.pdf
