@@ -3,7 +3,7 @@
 
 /* Scoped DeepONet diagram: fixed geometry, 4.5 s data-flow cycle. */
 .deeponet{--ink:#17304A;--don-blue:#3575CB;--don-teal:#219884;margin:22px 0 26px;padding:14px 10px;background:#F4F7FB;border:1px solid var(--line);border-radius:4px;min-width:0}
-.deeponet svg{display:block;width:100%;height:auto;overflow:hidden;font-family:inherit;font-size:18px;fill:var(--ink)}
+.deeponet > svg{display:block;width:100%;height:auto;overflow:hidden;font-family:inherit;font-size:18px;fill:var(--ink)}
 .deeponet .don-mobile{display:none}.deeponet figcaption{font-size:12px;color:var(--muted);margin:8px 6px 0;line-height:1.5}
 .don-title{font-family:Georgia,serif;font-size:26px}.don-heading{font-size:19px;font-weight:600}.don-center{text-anchor:middle}.don-small{font-size:13px}.don-star{font-size:34px}
 .don-branch{color:var(--don-blue)}.don-trunk{color:var(--don-teal)}
@@ -23,7 +23,7 @@
 @media print{.deeponet *{animation:none!important}.deeponet .don-flow{display:none}.deeponet{break-inside:avoid;background:white}}
 
 .don-input-label{font-size:13px}
-@media(max-width:600px){.deeponet svg{font-size:22px}.deeponet .don-heading{font-size:22px}.deeponet .don-small{font-size:15px}.deeponet .don-input-label{font-size:16px}}
+@media(max-width:600px){.deeponet > svg{font-size:22px}.deeponet .don-heading{font-size:22px}.deeponet .don-small{font-size:15px}.deeponet .don-input-label{font-size:16px}}
 
 /* TikZ-style fixed feature columns and schematic input vectors. */
 .deeponet .don-fixed-value{fill:var(--don-teal);fill-opacity:.12;stroke:var(--don-teal);stroke-width:1.5}
@@ -41,3 +41,7 @@
 .deeponet{color:#17304A;border-color:#b9c1c9}
 .deeponet .don-branch .don-panel{fill:#f7f9fd;stroke:#3575CB;stroke-opacity:.45}
 .deeponet .don-trunk .don-panel{fill:#f6fbfa;stroke:#219884;stroke-opacity:.45}
+
+/* Equation SVGs retain MathJax intrinsic sizing, independent of diagram SVGs. */
+.deeponet .don-equation{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:18px;line-height:1.2;color:var(--ink)}
+.deeponet .don-equation mjx-container{margin:0!important}
