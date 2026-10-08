@@ -58,6 +58,747 @@ Jun 2026 — Present
 Master's Thesis · Supervisor: Prof. Dr. Martin Kronbichler
 </p>
 
+<!-- DeepONet: two static layouts share the same CSS data-flow timing. -->
+<figure class="deeponet">
+<svg class="don-desktop" viewBox="0 0 1000 460" role="img" aria-label="DeepONet: residual r/s enters the blue branch network; coordinates X enter fixed teal Fourier and QR feature construction. Coefficients and basis contract to produce correction δu.">
+<defs>
+<marker id="don-arrow-desktop" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+<path d="M 0 0 L 6 3 L 0 6" fill="#219884" />
+</marker>
+</defs>
+<title>DeepONet architecture and data flow</title>
+<desc>Displayed circles are schematic, not individual dimensions. Branch: Linear 1024 to 1024, Linear 1024 to 1024, GELU, Linear 1024 to 1024. Trunk: Angles, Fourier features, QR basis, T. δu_i = Σ_j T_ij b_j(r/s).</desc>
+<text x="500" y="30" class="don-title don-center">DeepONet</text>
+<g transform="translate(10 55)">
+<g class="don-branch">
+<rect class="don-panel" width="420" height="190" rx="4" x="140" />
+<text x="150" y="28" class="don-heading">Branch · residual-to-coefficient map</text>
+<text x="18" y="60" class="don-input-label">Residual vector</text>
+<text x="18" y="187" class="don-input">r/s ∈ ℝ¹⁰²⁴</text>
+<text x="170" y="60" class="don-center">Linear</text>
+<text x="170" y="80" class="don-small don-center">1024 → 1024</text>
+<text x="285" y="60" class="don-center">Linear</text>
+<text x="285" y="80" class="don-small don-center">1024 → 1024</text>
+<text x="395" y="60" class="don-center">GELU</text>
+<text x="510" y="60" class="don-center">Linear</text>
+<text x="510" y="80" class="don-small don-center">1024 → 1024</text>
+<text x="615" y="60" class="don-center">bθ(r/s)</text>
+<text x="615" y="80" class="don-small don-center">coefficients</text>
+<circle cx="75" cy="100" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="113" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="126" r="1.2" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="139" r="1.2" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="152" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="165" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="170" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="285" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="395" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="510" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="615" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<path d="M 79 100 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 100 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="1" />
+<path d="M 79 113 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 113 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="2" />
+<path d="M 79 126 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 126 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="3" />
+<path d="M 79 139 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 139 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="4" />
+<path d="M 79 152 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 152 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="5" />
+<path d="M 79 165 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 165 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="6" />
+<path d="M 79 100 L 166 113" class="don-dense" />
+<path d="M 79 100 L 166 126" class="don-dense" />
+<path d="M 79 100 L 166 139" class="don-dense" />
+<path d="M 79 100 L 166 152" class="don-dense" />
+<path d="M 79 100 L 166 165" class="don-dense" />
+<path d="M 79 113 L 166 100" class="don-dense" />
+<path d="M 79 113 L 166 126" class="don-dense" />
+<path d="M 79 113 L 166 139" class="don-dense" />
+<path d="M 79 113 L 166 152" class="don-dense" />
+<path d="M 79 113 L 166 165" class="don-dense" />
+<path d="M 79 126 L 166 100" class="don-dense" />
+<path d="M 79 126 L 166 113" class="don-dense" />
+<path d="M 79 126 L 166 139" class="don-dense" />
+<path d="M 79 126 L 166 152" class="don-dense" />
+<path d="M 79 126 L 166 165" class="don-dense" />
+<path d="M 79 139 L 166 100" class="don-dense" />
+<path d="M 79 139 L 166 113" class="don-dense" />
+<path d="M 79 139 L 166 126" class="don-dense" />
+<path d="M 79 139 L 166 152" class="don-dense" />
+<path d="M 79 139 L 166 165" class="don-dense" />
+<path d="M 79 152 L 166 100" class="don-dense" />
+<path d="M 79 152 L 166 113" class="don-dense" />
+<path d="M 79 152 L 166 126" class="don-dense" />
+<path d="M 79 152 L 166 139" class="don-dense" />
+<path d="M 79 152 L 166 165" class="don-dense" />
+<path d="M 79 165 L 166 100" class="don-dense" />
+<path d="M 79 165 L 166 113" class="don-dense" />
+<path d="M 79 165 L 166 126" class="don-dense" />
+<path d="M 79 165 L 166 139" class="don-dense" />
+<path d="M 79 165 L 166 152" class="don-dense" />
+<path d="M 174 100 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 100 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="1" />
+<path d="M 174 113 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 113 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="2" />
+<path d="M 174 126 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 126 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="3" />
+<path d="M 174 139 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 139 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="4" />
+<path d="M 174 152 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 152 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="5" />
+<path d="M 174 165 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 165 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="6" />
+<path d="M 174 100 L 281 113" class="don-dense" />
+<path d="M 174 100 L 281 126" class="don-dense" />
+<path d="M 174 100 L 281 139" class="don-dense" />
+<path d="M 174 100 L 281 152" class="don-dense" />
+<path d="M 174 100 L 281 165" class="don-dense" />
+<path d="M 174 113 L 281 100" class="don-dense" />
+<path d="M 174 113 L 281 126" class="don-dense" />
+<path d="M 174 113 L 281 139" class="don-dense" />
+<path d="M 174 113 L 281 152" class="don-dense" />
+<path d="M 174 113 L 281 165" class="don-dense" />
+<path d="M 174 126 L 281 100" class="don-dense" />
+<path d="M 174 126 L 281 113" class="don-dense" />
+<path d="M 174 126 L 281 139" class="don-dense" />
+<path d="M 174 126 L 281 152" class="don-dense" />
+<path d="M 174 126 L 281 165" class="don-dense" />
+<path d="M 174 139 L 281 100" class="don-dense" />
+<path d="M 174 139 L 281 113" class="don-dense" />
+<path d="M 174 139 L 281 126" class="don-dense" />
+<path d="M 174 139 L 281 152" class="don-dense" />
+<path d="M 174 139 L 281 165" class="don-dense" />
+<path d="M 174 152 L 281 100" class="don-dense" />
+<path d="M 174 152 L 281 113" class="don-dense" />
+<path d="M 174 152 L 281 126" class="don-dense" />
+<path d="M 174 152 L 281 139" class="don-dense" />
+<path d="M 174 152 L 281 165" class="don-dense" />
+<path d="M 174 165 L 281 100" class="don-dense" />
+<path d="M 174 165 L 281 113" class="don-dense" />
+<path d="M 174 165 L 281 126" class="don-dense" />
+<path d="M 174 165 L 281 139" class="don-dense" />
+<path d="M 174 165 L 281 152" class="don-dense" />
+<path d="M 289 100 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 100 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="1" />
+<path d="M 289 113 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 113 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="2" />
+<path d="M 289 126 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 126 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="3" />
+<path d="M 289 139 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 139 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="4" />
+<path d="M 289 152 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 152 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="5" />
+<path d="M 289 165 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 165 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="6" />
+<path d="M 399 100 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 100 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="1" />
+<path d="M 399 113 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 113 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="2" />
+<path d="M 399 126 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 126 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="3" />
+<path d="M 399 139 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 139 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="4" />
+<path d="M 399 152 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 152 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="5" />
+<path d="M 399 165 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 165 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="6" />
+<path d="M 399 100 L 506 113" class="don-dense" />
+<path d="M 399 100 L 506 126" class="don-dense" />
+<path d="M 399 100 L 506 139" class="don-dense" />
+<path d="M 399 100 L 506 152" class="don-dense" />
+<path d="M 399 100 L 506 165" class="don-dense" />
+<path d="M 399 113 L 506 100" class="don-dense" />
+<path d="M 399 113 L 506 126" class="don-dense" />
+<path d="M 399 113 L 506 139" class="don-dense" />
+<path d="M 399 113 L 506 152" class="don-dense" />
+<path d="M 399 113 L 506 165" class="don-dense" />
+<path d="M 399 126 L 506 100" class="don-dense" />
+<path d="M 399 126 L 506 113" class="don-dense" />
+<path d="M 399 126 L 506 139" class="don-dense" />
+<path d="M 399 126 L 506 152" class="don-dense" />
+<path d="M 399 126 L 506 165" class="don-dense" />
+<path d="M 399 139 L 506 100" class="don-dense" />
+<path d="M 399 139 L 506 113" class="don-dense" />
+<path d="M 399 139 L 506 126" class="don-dense" />
+<path d="M 399 139 L 506 152" class="don-dense" />
+<path d="M 399 139 L 506 165" class="don-dense" />
+<path d="M 399 152 L 506 100" class="don-dense" />
+<path d="M 399 152 L 506 113" class="don-dense" />
+<path d="M 399 152 L 506 126" class="don-dense" />
+<path d="M 399 152 L 506 139" class="don-dense" />
+<path d="M 399 152 L 506 165" class="don-dense" />
+<path d="M 399 165 L 506 100" class="don-dense" />
+<path d="M 399 165 L 506 113" class="don-dense" />
+<path d="M 399 165 L 506 126" class="don-dense" />
+<path d="M 399 165 L 506 139" class="don-dense" />
+<path d="M 399 165 L 506 152" class="don-dense" />
+<path d="M 514 100 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 100 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="1" />
+<path d="M 514 113 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 113 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="2" />
+<path d="M 514 126 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 126 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="3" />
+<path d="M 514 139 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 139 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="4" />
+<path d="M 514 152 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 152 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="5" />
+<path d="M 514 165 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 165 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="6" />
+</g>
+</g>
+<g transform="translate(10 255)">
+<g class="don-trunk">
+<rect class="don-panel" x="140" width="200" height="190" rx="4" />
+<text x="150" y="28" class="don-heading">Trunk · fixed features</text>
+<text x="18" y="60" class="don-input-label">DoF coordinates</text>
+<text x="18" y="187" class="don-input">X ∈ ℝ¹⁰²⁴ˣ³</text>
+<text x="170" y="60" class="don-center">Angles</text>
+<text x="285" y="60" class="don-center">Fourier</text>
+<text x="510" y="60" class="don-center">QR basis</text>
+<text x="285" y="80" class="don-small don-center">features</text>
+<text x="615" y="60" class="don-center">T</text>
+<text x="395" y="109" class="don-small don-center">F = T R</text>
+<circle cx="75" cy="100" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="113" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="126" r="1.2" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="139" r="1.2" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="152" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="165" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="170" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="285" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="510" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="615" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<text x="615" y="185" class="don-small don-center">Tᵢⱼ</text>
+<path d="M 79 100 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 100 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="1" />
+<path d="M 79 113 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 113 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="2" />
+<path d="M 79 126 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 126 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="3" />
+<path d="M 79 139 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 139 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="4" />
+<path d="M 79 152 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 152 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="5" />
+<path d="M 79 165 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 165 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="6" />
+<path d="M 174 100 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 100 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="1" />
+<path d="M 174 113 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 113 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="2" />
+<path d="M 174 126 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 126 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="3" />
+<path d="M 174 139 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 139 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="4" />
+<path d="M 174 152 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 152 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="5" />
+<path d="M 174 165 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 165 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="6" />
+<path d="M 174 100 L 281 113" class="don-dense" />
+<path d="M 174 100 L 281 126" class="don-dense" />
+<path d="M 174 100 L 281 139" class="don-dense" />
+<path d="M 174 100 L 281 152" class="don-dense" />
+<path d="M 174 100 L 281 165" class="don-dense" />
+<path d="M 174 113 L 281 100" class="don-dense" />
+<path d="M 174 113 L 281 126" class="don-dense" />
+<path d="M 174 113 L 281 139" class="don-dense" />
+<path d="M 174 113 L 281 152" class="don-dense" />
+<path d="M 174 113 L 281 165" class="don-dense" />
+<path d="M 174 126 L 281 100" class="don-dense" />
+<path d="M 174 126 L 281 113" class="don-dense" />
+<path d="M 174 126 L 281 139" class="don-dense" />
+<path d="M 174 126 L 281 152" class="don-dense" />
+<path d="M 174 126 L 281 165" class="don-dense" />
+<path d="M 174 139 L 281 100" class="don-dense" />
+<path d="M 174 139 L 281 113" class="don-dense" />
+<path d="M 174 139 L 281 126" class="don-dense" />
+<path d="M 174 139 L 281 152" class="don-dense" />
+<path d="M 174 139 L 281 165" class="don-dense" />
+<path d="M 174 152 L 281 100" class="don-dense" />
+<path d="M 174 152 L 281 113" class="don-dense" />
+<path d="M 174 152 L 281 126" class="don-dense" />
+<path d="M 174 152 L 281 139" class="don-dense" />
+<path d="M 174 152 L 281 165" class="don-dense" />
+<path d="M 174 165 L 281 100" class="don-dense" />
+<path d="M 174 165 L 281 113" class="don-dense" />
+<path d="M 174 165 L 281 126" class="don-dense" />
+<path d="M 174 165 L 281 139" class="don-dense" />
+<path d="M 174 165 L 281 152" class="don-dense" />
+<path d="M 289 100 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 100 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="1" />
+<path d="M 289 113 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 113 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="2" />
+<path d="M 289 126 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 126 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="3" />
+<path d="M 289 139 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 139 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="4" />
+<path d="M 289 152 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 152 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="5" />
+<path d="M 289 165 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 165 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="6" />
+<path d="M 514 100 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 100 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="1" />
+<path d="M 514 113 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 113 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="2" />
+<path d="M 514 126 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 126 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="3" />
+<path d="M 514 139 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 139 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="4" />
+<path d="M 514 152 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 152 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="5" />
+<path d="M 514 165 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 165 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="6" />
+</g>
+</g>
+<text x="820" y="110" class="don-heading don-center">Feature contraction</text>
+<text x="820" y="330" class="don-center">δuᵢ = Σⱼ Tᵢⱼ bⱼ(r/s)</text>
+<text x="925" y="175" class="don-center">Correction vector</text>
+<text x="925" y="199" class="don-center">δu ∈ ℝ¹⁰²⁴</text>
+<g class="don-branch">
+<path d="M 645 181 H 735 V 231" class="don-wire" />
+<path d="M 645 181 H 735 V 231" class="don-flow don-arrive" />
+</g>
+<g class="don-trunk">
+<path d="M 645 381 H 735 V 279" class="don-wire" />
+<path d="M 645 381 H 735 V 279" class="don-flow don-arrive" />
+</g>
+<circle cx="735" cy="255" r="24" class="don-contract" />
+<text x="735" y="265" class="don-star don-center">*</text>
+<circle cx="945.0" cy="222.5" r="4" class="don-output" />
+<path d="M 759 255 C 799 255 905.0 222.5 940.0 222.5" class="don-wire don-neural-wire" />
+<path d="M 759 255 C 799 255 905.0 222.5 940.0 222.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="1" />
+<circle cx="945.0" cy="235.5" r="4" class="don-output" />
+<path d="M 759 255 C 799 255 905.0 235.5 940.0 235.5" class="don-wire don-neural-wire" />
+<path d="M 759 255 C 799 255 905.0 235.5 940.0 235.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="2" />
+<circle cx="945.0" cy="248.5" r="1.2" class="don-output" />
+<path d="M 759 255 C 799 255 905.0 248.5 940.0 248.5" class="don-wire don-neural-wire" />
+<path d="M 759 255 C 799 255 905.0 248.5 940.0 248.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="3" />
+<circle cx="945.0" cy="261.5" r="1.2" class="don-output" />
+<path d="M 759 255 C 799 255 905.0 261.5 940.0 261.5" class="don-wire don-neural-wire" />
+<path d="M 759 255 C 799 255 905.0 261.5 940.0 261.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="4" />
+<circle cx="945.0" cy="274.5" r="4" class="don-output" />
+<path d="M 759 255 C 799 255 905.0 274.5 940.0 274.5" class="don-wire don-neural-wire" />
+<path d="M 759 255 C 799 255 905.0 274.5 940.0 274.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="5" />
+<circle cx="945.0" cy="287.5" r="4" class="don-output" />
+<path d="M 759 255 C 799 255 905.0 287.5 940.0 287.5" class="don-wire don-neural-wire" />
+<path d="M 759 255 C 799 255 905.0 287.5 940.0 287.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="6" />
+</svg>
+<svg class="don-mobile" viewBox="0 0 480 530" role="img" aria-label="DeepONet: residual r/s enters the blue branch network; coordinates X enter fixed teal Fourier and QR feature construction. Coefficients and basis contract to produce correction δu.">
+<defs>
+<marker id="don-arrow-mobile" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+<path d="M 0 0 L 6 3 L 0 6" fill="#219884" />
+</marker>
+</defs>
+<title>DeepONet architecture and data flow</title>
+<desc>Displayed circles are schematic, not individual dimensions. Branch: Linear 1024 to 1024, Linear 1024 to 1024, GELU, Linear 1024 to 1024. Trunk: Angles, Fourier features, QR basis, T. δu_i = Σ_j T_ij b_j(r/s).</desc>
+<text x="240" y="30" class="don-title don-center">DeepONet</text>
+<g transform="translate(10 50) scale(.697)">
+<g class="don-branch">
+<rect class="don-panel" width="420" height="190" rx="4" x="140" />
+<text x="150" y="28" class="don-heading">Branch · residual-to-coefficient map</text>
+<text x="18" y="60" class="don-input-label">Residual vector</text>
+<text x="18" y="187" class="don-input">r/s ∈ ℝ¹⁰²⁴</text>
+<text x="170" y="60" class="don-center">Linear</text>
+<text x="170" y="80" class="don-small don-center">1024 → 1024</text>
+<text x="285" y="60" class="don-center">Linear</text>
+<text x="285" y="80" class="don-small don-center">1024 → 1024</text>
+<text x="395" y="60" class="don-center">GELU</text>
+<text x="510" y="60" class="don-center">Linear</text>
+<text x="510" y="80" class="don-small don-center">1024 → 1024</text>
+<text x="615" y="60" class="don-center">bθ(r/s)</text>
+<text x="615" y="80" class="don-small don-center">coefficients</text>
+<circle cx="75" cy="100" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="113" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="126" r="1.2" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="139" r="1.2" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="152" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="165" r="4" class="don-neuron don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="170" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:0.8s" />
+<circle cx="285" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:1.1s" />
+<circle cx="395" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="395" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:1.4s" />
+<circle cx="510" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:1.7s" />
+<circle cx="615" cy="100" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="113" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="126" r="1.2" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="139" r="1.2" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="152" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="165" r="4" class="don-neuron don-active-circle" style="--don-phase:2.0s" />
+<path d="M 79 100 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 100 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="1" />
+<path d="M 79 113 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 113 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="2" />
+<path d="M 79 126 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 126 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="3" />
+<path d="M 79 139 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 139 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="4" />
+<path d="M 79 152 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 152 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="5" />
+<path d="M 79 165 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 165 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-branch-1" data-symbol="6" />
+<path d="M 79 100 L 166 113" class="don-dense" />
+<path d="M 79 100 L 166 126" class="don-dense" />
+<path d="M 79 100 L 166 139" class="don-dense" />
+<path d="M 79 100 L 166 152" class="don-dense" />
+<path d="M 79 100 L 166 165" class="don-dense" />
+<path d="M 79 113 L 166 100" class="don-dense" />
+<path d="M 79 113 L 166 126" class="don-dense" />
+<path d="M 79 113 L 166 139" class="don-dense" />
+<path d="M 79 113 L 166 152" class="don-dense" />
+<path d="M 79 113 L 166 165" class="don-dense" />
+<path d="M 79 126 L 166 100" class="don-dense" />
+<path d="M 79 126 L 166 113" class="don-dense" />
+<path d="M 79 126 L 166 139" class="don-dense" />
+<path d="M 79 126 L 166 152" class="don-dense" />
+<path d="M 79 126 L 166 165" class="don-dense" />
+<path d="M 79 139 L 166 100" class="don-dense" />
+<path d="M 79 139 L 166 113" class="don-dense" />
+<path d="M 79 139 L 166 126" class="don-dense" />
+<path d="M 79 139 L 166 152" class="don-dense" />
+<path d="M 79 139 L 166 165" class="don-dense" />
+<path d="M 79 152 L 166 100" class="don-dense" />
+<path d="M 79 152 L 166 113" class="don-dense" />
+<path d="M 79 152 L 166 126" class="don-dense" />
+<path d="M 79 152 L 166 139" class="don-dense" />
+<path d="M 79 152 L 166 165" class="don-dense" />
+<path d="M 79 165 L 166 100" class="don-dense" />
+<path d="M 79 165 L 166 113" class="don-dense" />
+<path d="M 79 165 L 166 126" class="don-dense" />
+<path d="M 79 165 L 166 139" class="don-dense" />
+<path d="M 79 165 L 166 152" class="don-dense" />
+<path d="M 174 100 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 100 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="1" />
+<path d="M 174 113 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 113 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="2" />
+<path d="M 174 126 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 126 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="3" />
+<path d="M 174 139 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 139 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="4" />
+<path d="M 174 152 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 152 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="5" />
+<path d="M 174 165 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 165 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-branch-2" data-symbol="6" />
+<path d="M 174 100 L 281 113" class="don-dense" />
+<path d="M 174 100 L 281 126" class="don-dense" />
+<path d="M 174 100 L 281 139" class="don-dense" />
+<path d="M 174 100 L 281 152" class="don-dense" />
+<path d="M 174 100 L 281 165" class="don-dense" />
+<path d="M 174 113 L 281 100" class="don-dense" />
+<path d="M 174 113 L 281 126" class="don-dense" />
+<path d="M 174 113 L 281 139" class="don-dense" />
+<path d="M 174 113 L 281 152" class="don-dense" />
+<path d="M 174 113 L 281 165" class="don-dense" />
+<path d="M 174 126 L 281 100" class="don-dense" />
+<path d="M 174 126 L 281 113" class="don-dense" />
+<path d="M 174 126 L 281 139" class="don-dense" />
+<path d="M 174 126 L 281 152" class="don-dense" />
+<path d="M 174 126 L 281 165" class="don-dense" />
+<path d="M 174 139 L 281 100" class="don-dense" />
+<path d="M 174 139 L 281 113" class="don-dense" />
+<path d="M 174 139 L 281 126" class="don-dense" />
+<path d="M 174 139 L 281 152" class="don-dense" />
+<path d="M 174 139 L 281 165" class="don-dense" />
+<path d="M 174 152 L 281 100" class="don-dense" />
+<path d="M 174 152 L 281 113" class="don-dense" />
+<path d="M 174 152 L 281 126" class="don-dense" />
+<path d="M 174 152 L 281 139" class="don-dense" />
+<path d="M 174 152 L 281 165" class="don-dense" />
+<path d="M 174 165 L 281 100" class="don-dense" />
+<path d="M 174 165 L 281 113" class="don-dense" />
+<path d="M 174 165 L 281 126" class="don-dense" />
+<path d="M 174 165 L 281 139" class="don-dense" />
+<path d="M 174 165 L 281 152" class="don-dense" />
+<path d="M 289 100 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 100 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="1" />
+<path d="M 289 113 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 113 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="2" />
+<path d="M 289 126 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 126 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="3" />
+<path d="M 289 139 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 139 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="4" />
+<path d="M 289 152 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 152 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="5" />
+<path d="M 289 165 H 391" class="don-wire don-neural-wire" />
+<path d="M 289 165 H 391" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.1s" data-stage="don-branch-3" data-symbol="6" />
+<path d="M 399 100 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 100 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="1" />
+<path d="M 399 113 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 113 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="2" />
+<path d="M 399 126 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 126 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="3" />
+<path d="M 399 139 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 139 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="4" />
+<path d="M 399 152 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 152 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="5" />
+<path d="M 399 165 H 506" class="don-wire don-neural-wire" />
+<path d="M 399 165 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-branch-4" data-symbol="6" />
+<path d="M 399 100 L 506 113" class="don-dense" />
+<path d="M 399 100 L 506 126" class="don-dense" />
+<path d="M 399 100 L 506 139" class="don-dense" />
+<path d="M 399 100 L 506 152" class="don-dense" />
+<path d="M 399 100 L 506 165" class="don-dense" />
+<path d="M 399 113 L 506 100" class="don-dense" />
+<path d="M 399 113 L 506 126" class="don-dense" />
+<path d="M 399 113 L 506 139" class="don-dense" />
+<path d="M 399 113 L 506 152" class="don-dense" />
+<path d="M 399 113 L 506 165" class="don-dense" />
+<path d="M 399 126 L 506 100" class="don-dense" />
+<path d="M 399 126 L 506 113" class="don-dense" />
+<path d="M 399 126 L 506 139" class="don-dense" />
+<path d="M 399 126 L 506 152" class="don-dense" />
+<path d="M 399 126 L 506 165" class="don-dense" />
+<path d="M 399 139 L 506 100" class="don-dense" />
+<path d="M 399 139 L 506 113" class="don-dense" />
+<path d="M 399 139 L 506 126" class="don-dense" />
+<path d="M 399 139 L 506 152" class="don-dense" />
+<path d="M 399 139 L 506 165" class="don-dense" />
+<path d="M 399 152 L 506 100" class="don-dense" />
+<path d="M 399 152 L 506 113" class="don-dense" />
+<path d="M 399 152 L 506 126" class="don-dense" />
+<path d="M 399 152 L 506 139" class="don-dense" />
+<path d="M 399 152 L 506 165" class="don-dense" />
+<path d="M 399 165 L 506 100" class="don-dense" />
+<path d="M 399 165 L 506 113" class="don-dense" />
+<path d="M 399 165 L 506 126" class="don-dense" />
+<path d="M 399 165 L 506 139" class="don-dense" />
+<path d="M 399 165 L 506 152" class="don-dense" />
+<path d="M 514 100 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 100 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="1" />
+<path d="M 514 113 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 113 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="2" />
+<path d="M 514 126 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 126 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="3" />
+<path d="M 514 139 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 139 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="4" />
+<path d="M 514 152 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 152 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="5" />
+<path d="M 514 165 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 165 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-branch-5" data-symbol="6" />
+</g>
+</g>
+<g transform="translate(10 210) scale(.697)">
+<g class="don-trunk">
+<rect class="don-panel" x="140" width="200" height="190" rx="4" />
+<text x="150" y="28" class="don-heading">Trunk · fixed features</text>
+<text x="18" y="60" class="don-input-label">DoF coordinates</text>
+<text x="18" y="187" class="don-input">X ∈ ℝ¹⁰²⁴ˣ³</text>
+<text x="170" y="60" class="don-center">Angles</text>
+<text x="285" y="60" class="don-center">Fourier</text>
+<text x="510" y="60" class="don-center">QR basis</text>
+<text x="285" y="80" class="don-small don-center">features</text>
+<text x="615" y="60" class="don-center">T</text>
+<text x="395" y="109" class="don-small don-center">F = T R</text>
+<circle cx="75" cy="100" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="113" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="126" r="1.2" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="139" r="1.2" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="152" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="75" cy="165" r="4" class="don-fixed-value don-input-vector don-active-circle" style="--don-phase:0s" />
+<circle cx="170" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="170" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:0.8s" />
+<circle cx="285" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="285" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.1s" />
+<circle cx="510" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="510" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:1.7s" />
+<circle cx="615" cy="100" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="113" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="126" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="139" r="1.2" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="152" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<circle cx="615" cy="165" r="4" class="don-fixed-value don-active-circle" style="--don-phase:2.0s" />
+<text x="615" y="185" class="don-small don-center">Tᵢⱼ</text>
+<path d="M 79 100 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 100 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="1" />
+<path d="M 79 113 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 113 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="2" />
+<path d="M 79 126 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 126 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="3" />
+<path d="M 79 139 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 139 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="4" />
+<path d="M 79 152 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 152 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="5" />
+<path d="M 79 165 H 166" class="don-wire don-neural-wire" />
+<path d="M 79 165 H 166" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.5s" data-stage="don-trunk-1" data-symbol="6" />
+<path d="M 174 100 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 100 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="1" />
+<path d="M 174 113 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 113 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="2" />
+<path d="M 174 126 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 126 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="3" />
+<path d="M 174 139 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 139 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="4" />
+<path d="M 174 152 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 152 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="5" />
+<path d="M 174 165 H 281" class="don-wire don-neural-wire" />
+<path d="M 174 165 H 281" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:0.8s" data-stage="don-trunk-2" data-symbol="6" />
+<path d="M 174 100 L 281 113" class="don-dense" />
+<path d="M 174 100 L 281 126" class="don-dense" />
+<path d="M 174 100 L 281 139" class="don-dense" />
+<path d="M 174 100 L 281 152" class="don-dense" />
+<path d="M 174 100 L 281 165" class="don-dense" />
+<path d="M 174 113 L 281 100" class="don-dense" />
+<path d="M 174 113 L 281 126" class="don-dense" />
+<path d="M 174 113 L 281 139" class="don-dense" />
+<path d="M 174 113 L 281 152" class="don-dense" />
+<path d="M 174 113 L 281 165" class="don-dense" />
+<path d="M 174 126 L 281 100" class="don-dense" />
+<path d="M 174 126 L 281 113" class="don-dense" />
+<path d="M 174 126 L 281 139" class="don-dense" />
+<path d="M 174 126 L 281 152" class="don-dense" />
+<path d="M 174 126 L 281 165" class="don-dense" />
+<path d="M 174 139 L 281 100" class="don-dense" />
+<path d="M 174 139 L 281 113" class="don-dense" />
+<path d="M 174 139 L 281 126" class="don-dense" />
+<path d="M 174 139 L 281 152" class="don-dense" />
+<path d="M 174 139 L 281 165" class="don-dense" />
+<path d="M 174 152 L 281 100" class="don-dense" />
+<path d="M 174 152 L 281 113" class="don-dense" />
+<path d="M 174 152 L 281 126" class="don-dense" />
+<path d="M 174 152 L 281 139" class="don-dense" />
+<path d="M 174 152 L 281 165" class="don-dense" />
+<path d="M 174 165 L 281 100" class="don-dense" />
+<path d="M 174 165 L 281 113" class="don-dense" />
+<path d="M 174 165 L 281 126" class="don-dense" />
+<path d="M 174 165 L 281 139" class="don-dense" />
+<path d="M 174 165 L 281 152" class="don-dense" />
+<path d="M 289 100 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 100 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="1" />
+<path d="M 289 113 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 113 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="2" />
+<path d="M 289 126 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 126 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="3" />
+<path d="M 289 139 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 139 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="4" />
+<path d="M 289 152 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 152 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="5" />
+<path d="M 289 165 H 506" class="don-wire don-neural-wire" />
+<path d="M 289 165 H 506" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.4s" data-stage="don-trunk-3" data-symbol="6" />
+<path d="M 514 100 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 100 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="1" />
+<path d="M 514 113 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 113 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="2" />
+<path d="M 514 126 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 126 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="3" />
+<path d="M 514 139 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 139 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="4" />
+<path d="M 514 152 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 152 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="5" />
+<path d="M 514 165 H 611" class="don-wire don-neural-wire" />
+<path d="M 514 165 H 611" pathLength="1" class="don-flow don-neural-flow" style="--don-phase:1.7s" data-stage="don-trunk-4" data-symbol="6" />
+</g>
+</g>
+<text x="20" y="385" class="don-heading">Feature contraction</text>
+<text x="240" y="485" class="don-center">δuᵢ = Σⱼ Tᵢⱼ bⱼ(r/s)</text>
+<text x="400" y="345" class="don-center">Correction</text>
+<text x="400" y="367" class="don-center">δu ∈ ℝ¹⁰²⁴</text>
+<g class="don-branch">
+<path d="M 453 138 H 474 V 365 H 240 V 390" class="don-wire" />
+<path d="M 453 138 H 474 V 365 H 240 V 390" class="don-flow don-arrive" />
+</g>
+<g class="don-trunk">
+<path d="M 453 298 V 355 H 240 V 390" class="don-wire" />
+<path d="M 453 298 V 355 H 240 V 390" class="don-flow don-arrive" />
+</g>
+<circle cx="240" cy="410" r="24" class="don-contract" />
+<text x="240" y="420" class="don-star don-center">*</text>
+<circle cx="400.0" cy="377.5" r="4" class="don-output" />
+<path d="M 264 410 C 304 410 360.0 377.5 395.0 377.5" class="don-wire don-neural-wire" />
+<path d="M 264 410 C 304 410 360.0 377.5 395.0 377.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="1" />
+<circle cx="400.0" cy="390.5" r="4" class="don-output" />
+<path d="M 264 410 C 304 410 360.0 390.5 395.0 390.5" class="don-wire don-neural-wire" />
+<path d="M 264 410 C 304 410 360.0 390.5 395.0 390.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="2" />
+<circle cx="400.0" cy="403.5" r="1.2" class="don-output" />
+<path d="M 264 410 C 304 410 360.0 403.5 395.0 403.5" class="don-wire don-neural-wire" />
+<path d="M 264 410 C 304 410 360.0 403.5 395.0 403.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="3" />
+<circle cx="400.0" cy="416.5" r="1.2" class="don-output" />
+<path d="M 264 410 C 304 410 360.0 416.5 395.0 416.5" class="don-wire don-neural-wire" />
+<path d="M 264 410 C 304 410 360.0 416.5 395.0 416.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="4" />
+<circle cx="400.0" cy="429.5" r="4" class="don-output" />
+<path d="M 264 410 C 304 410 360.0 429.5 395.0 429.5" class="don-wire don-neural-wire" />
+<path d="M 264 410 C 304 410 360.0 429.5 395.0 429.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="5" />
+<circle cx="400.0" cy="442.5" r="4" class="don-output" />
+<path d="M 264 410 C 304 410 360.0 442.5 395.0 442.5" class="don-wire don-neural-wire" />
+<path d="M 264 410 C 304 410 360.0 442.5 395.0 442.5" pathLength="1" class="don-flow don-result" data-stage="output" data-symbol="6" />
+</svg>
+<figcaption>Residual-to-correction operator · circles are schematic. Trunk circles represent fixed features, not trained neurons.</figcaption>
+</figure>
+
 <ul class="details">
 
 <li>
